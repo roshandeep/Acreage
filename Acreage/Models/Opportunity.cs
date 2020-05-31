@@ -8,6 +8,7 @@ namespace Acreage.Models
     public class Opportunity
     {
         public string opportunity_id;
+        public string opportunity_name;
         public string opportunty_details;
         public string created_by;
         public DateTime created_timestamp;

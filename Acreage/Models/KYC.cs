@@ -16,12 +16,17 @@ namespace Acreage.Models
         public string email_address;
         public DateTime date_of_birth;
         public string phone_no;
-        public string mailing_address;
-        public string residential_address;
         public bool address_similarity_flag;
-        public string city;
-        public string province;
-        public string postal_code;
+        public string mailing_address;
+        public string mailing_city;
+        public string mailing_province;
+        public string mailing_postal_code;
+        public string mailing_country;
+        public string residential_address;
+        public string residential_city;
+        public string residential_province;
+        public string residential_postal_code;
+        public string residential_country;
         public DateTime kyc_timestamp;
     }
 }
