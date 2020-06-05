@@ -28,6 +28,63 @@ namespace Acreage
             return dt;
         }
 
+        public DataTable getUploadedDocs(string investor_id)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
+        public DataTable getFileForDownload(string investor_id, string uploaded_fileName)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id AND uploaded_fileName = @uploaded_fileName";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+            cmd.Parameters.Add(new SqlParameter("@uploaded_fileName", uploaded_fileName));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
+        public void SaveFile(string filename, string fileExtension, string contentType, byte[] bytes, string filecategory)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "INSERT INTO suitability_test_uploadedDoc(investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory) VALUES(@investor_id, @uploaded_fileName, @file_extension, @file_contentType, @file_data, @filecategory)";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", "1"));
+            cmd.Parameters.Add(new SqlParameter("@uploaded_fileName", filename));
+            cmd.Parameters.Add(new SqlParameter("@file_extension", fileExtension));
+            cmd.Parameters.Add(new SqlParameter("@file_contentType", contentType));
+            cmd.Parameters.Add(new SqlParameter("@file_data", bytes));
+            cmd.Parameters.Add(new SqlParameter("@filecategory", filecategory));
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public int checkAllDocuments(string investor_id)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            int count = 0;
+            string sql = "SELECT COUNT(filecategory) FROM suitability_test_uploadedDoc WHERE filecategory IN ('Broker Statement', 'Financial Assets', 'T4', 'NOA', 'BankSavings');";
+            cmd = new SqlCommand(sql, cnn);
+            count = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+            return count;
+        }
+
         public DataTable LoadOpportunityDetails(string opp_id, string name)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
@@ -70,6 +127,23 @@ namespace Acreage
             cmd.Parameters.Add(new SqlParameter("@residential_country", kyc_obj.residential_country));
             cmd.Parameters.Add(new SqlParameter("@kyc_timestamp", DateTime.Now));
             cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+
+        public void SaveSuitabilityTestResults(string investor_id, List<string> questions, List<string> answers)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            for (int i = 0; i < answers.Count; i++)
+            {
+                string sql = "INSERT INTO suitability_test_res(investor_id, ques, ans_text) VALUES(@investor_id, @ques, @ans_text);";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+                cmd.Parameters.Add(new SqlParameter("@ques", questions[i]));
+                cmd.Parameters.Add(new SqlParameter("@ans_text", answers[i]));
+                cmd.ExecuteNonQuery();
+            }
             cnn.Close();
         }
     }

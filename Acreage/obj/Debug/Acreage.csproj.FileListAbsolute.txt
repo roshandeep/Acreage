@@ -69,3 +69,4 @@ C:\Users\rosha\source\repos\Acreage\Acreage\obj\Debug\Acreage.csproj.CoreCompile
 C:\Users\rosha\source\repos\Acreage\Acreage\obj\Debug\Acreage.csproj.CopyComplete
 C:\Users\rosha\source\repos\Acreage\Acreage\obj\Debug\Acreage.dll
 C:\Users\rosha\source\repos\Acreage\Acreage\obj\Debug\Acreage.pdb
+C:\Users\rosha\source\repos\Acreage\Acreage\bin\AjaxControlToolkit.dll
