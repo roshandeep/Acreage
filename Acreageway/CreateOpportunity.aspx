@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateOpportunity.aspx.cs" Inherits="Acreage.CreateOpportunity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="Scripts/jquery-3.3.1.js"></script>
-    <script src="Scripts/jquery-3.3.1.intellisense.js"></script>
+    <script src="Scripts/jquery-3.4.1.intellisense.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
     <script src="Scripts/jquery-ui-1.12.1.js"></script>
     <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
     <script src="Scripts/jquery-ui.js"></script>

@@ -21,7 +21,6 @@ namespace Acreage
         public void ShowUplodedDocuments()
         {
             DAL dal = new DAL();
-            string investor_id = "1";
             gv_uploadedDocs.DataSource = dal.getUploadedDocs(investor_id);
             gv_uploadedDocs.DataBind();
         }

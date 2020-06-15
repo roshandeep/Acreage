@@ -111,7 +111,7 @@ namespace Acreage
             {
                 SaveAnswers();
                 lbl_msg.ForeColor = System.Drawing.Color.Green;
-                lbl_msg.Text = "KYC Information saved";
+                lbl_msg.Text = "Information saved";
             }
             else
             {

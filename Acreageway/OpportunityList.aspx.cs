@@ -46,7 +46,7 @@ namespace Acreage
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 LinkButton lnk_favourite = (LinkButton)e.Item.FindControl("lnk_favourite");
-                if (Session["userRole"].ToString() == "Investor")
+                if (Session["userRole"].ToString() == "Issuer")
                 {
                     lnk_favourite.Visible = false;
                 }
@@ -54,7 +54,7 @@ namespace Acreage
             if (e.Item.ItemType == ListItemType.Header)
             {
                 var fav_th = e.Item.FindControl("fav_th") as Control;
-                if (Session["userRole"].ToString() == "Investor")
+                if (Session["userRole"].ToString() == "Issuer")
                 {
                     fav_th.Visible = false;
                 }

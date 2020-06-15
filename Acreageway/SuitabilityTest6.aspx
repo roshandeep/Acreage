@@ -3,8 +3,8 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
+<%--    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>--%>
     <h4>POLITICALLY EXPOSED PERSON (PEP): CLIENT QUESTIONNAIRE</h4>
     <table>
         <tr>

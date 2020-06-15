@@ -41,7 +41,15 @@ namespace Acreage
 
         private void DecideInvestorType(int amount, string income, string com_income, string fin_asset, string net_asset)
         {
-            
+            if(com_income.Equals("$300,000 to $1,000,000") || com_income.Equals("$300,000 to $1,000,000") || income.Equals("$200,000 to $500,000") || income.Equals("Over $500,000")
+                || fin_asset.Equals("Over $1,000,000") || net_asset.Equals("$1,000,000 to $5,000,000") || net_asset.Equals("Over $5,000,000"))
+            {
+                Session["InvestorType"] = "Accredited Investor";
+            }
+            else
+            {
+                Session["InvestorType"] = "Retail Investor";
+            }
         }
     }
 }
