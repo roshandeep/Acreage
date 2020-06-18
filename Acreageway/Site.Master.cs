@@ -66,6 +66,10 @@ namespace Acreageway
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Context.User.IsInRole("Admin"))
+            {
+                adminnavbar.Visible = true;
+            }
 
         }
 

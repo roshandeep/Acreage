@@ -153,7 +153,7 @@ namespace Acreage
         protected void btn_Next_Click(object sender, EventArgs e)
         {
             DAL dal = new DAL();
-            string investor_id = "1";
+            //string investor_id = "1";
             int count = dal.checkAllDocuments(investor_id);
             if(count != 5)
             {

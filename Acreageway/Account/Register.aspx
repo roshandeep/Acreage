@@ -15,7 +15,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                    CssClass="text-danger" ErrorMessage="The email field is required." />
+                    CssClass="text-danger" ErrorMessage="The email field is required." Text="*" />
             </div>
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="The password field is required." />
+                    CssClass="text-danger" ErrorMessage="The password field is required." Text="*" />
             </div>
         </div>
         <div class="form-group">
@@ -31,10 +31,18 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." Text="*" />
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." Text="*" />
             </div>
+        </div>
+        <div class="form-group">
+            <asp:RadioButtonList ID="UserType" runat="server">
+                <asp:ListItem Text="Investor" Value="1"/>
+                <asp:ListItem Text="Issuer" Value="2"/>
+            </asp:RadioButtonList>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserType"
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="You must select a user type." Text="*" />
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

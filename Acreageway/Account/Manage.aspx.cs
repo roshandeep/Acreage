@@ -26,6 +26,10 @@ namespace Acreageway.Account
 
         public int LoginsCount { get; set; }
 
+        public string UserID { get; private set; }
+
+        public string UserType { get; private set; }
+
         protected void Page_Load()
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -34,6 +38,15 @@ namespace Acreageway.Account
 
             // Enable this after setting up two-factor authentientication
             //PhoneNumber.Text = manager.GetPhoneNumber(User.Identity.GetUserId()) ?? String.Empty;
+
+            UserID = User.Identity.GetUserId();
+            var rolesList = manager.GetRoles(User.Identity.GetUserId());
+            foreach (var item in rolesList)
+            {
+                UserType += item + ", ";
+            }
+            UserType = UserType.TrimEnd();
+            UserType = UserType.TrimEnd(',');
 
             TwoFactorEnabled = manager.GetTwoFactorEnabled(User.Identity.GetUserId());
 

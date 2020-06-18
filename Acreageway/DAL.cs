@@ -34,7 +34,11 @@ namespace Acreage
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id ORDER BY added_timestamp DESC";
+            string sql = @"SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory
+                            FROM(SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory,
+                                           RANK() OVER(PARTITION BY filecategory ORDER BY added_timestamp DESC) AS doc_rank
+                                    FROM   suitability_test_uploadedDoc) ranked_table
+                            WHERE  doc_rank = 1 AND investor_id = @investor_id";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -7,27 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreageway {
-    
-    
-    public partial class SiteMaster {
-        
+namespace Acreageway.Admin
+{
+
+
+    public partial class IssuerManagement
+    {
+
         /// <summary>
-        /// adminnavbar control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminnavbar;
-        
+        protected global::System.Web.UI.WebControls.Label lblError;
+
         /// <summary>
-        /// MainContent control.
+        /// issuersGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView issuersGrid;
     }
 }

@@ -90,6 +90,10 @@
             <td>
                 <asp:Button ID="btn_Back" runat="server" Text="Back" OnClick="btn_Back_Click" />
             </td>
+            <td>
+                <asp:Button ID="btn_Invest" runat="server" Text="Invest" OnClick="btn_Invest_Click" />
+                <asp:Button ID="btn_favourite" runat="server" Text="Favourite" OnClick="btn_favourite_Click" />
+            </td>
         </tr>
     </table>
 </asp:Content>

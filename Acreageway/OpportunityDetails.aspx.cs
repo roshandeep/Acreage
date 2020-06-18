@@ -52,7 +52,7 @@ namespace Acreage
                     lbl_amt_left.Text = (Convert.ToDouble(row["total_amt"]) - Convert.ToDouble(row["amt_left"])).ToString();
                     int progress =  Convert.ToInt32((Convert.ToDouble(row["total_amt"]) - Convert.ToDouble(row["amt_left"])) / Convert.ToDouble(row["total_amt"]) * 100);
                     progress_bar.Attributes.Add("style", "width:"+ progress + "%");
-                    progress_bar.Attributes.Add("aria-valuemax", row["amt_left"].ToString());
+                    progress_bar.Attributes.Add("aria-valuemax", row["total_amt"].ToString());
                     progress_bar.Attributes.Add("aria-valuenow", row["amt_left"].ToString());
                 }
             }
@@ -61,6 +61,24 @@ namespace Acreage
         protected void btn_Back_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/OpportunityList.aspx", false);
+        }
+
+        protected void btn_Invest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_favourite_Click(object sender, EventArgs e)
+        {
+            if (Request.QueryString["Id"] != null && Request.QueryString["Name"] != null)
+            {
+                string opp_id = Request.QueryString["Id"].ToString();
+                string name = Request.QueryString["Name"].ToString();
+                DAL dal = new DAL();
+                string investor_id = "7BBA56A7-82A3-4AE7-AAF1-7A8849649AE8";
+                dal.AddToFavourites(investor_id, opp_id);
+                Response.Redirect("OpportunityDetails.aspx?Id=" + opp_id + "&Name=" + name, false);
+            }
         }
     }
 }

@@ -32,12 +32,14 @@ namespace Acreage
 
         protected void lnk_favourite_Command(object sender, CommandEventArgs e)
         {
+            ModalPopupExtender1.Show();
             if (e.CommandName == "favourite")
             {
                 lbl_msg.Text = "Added To favourites";
                 string opportunity_id = e.CommandArgument.ToString();
-                DAL dal = new DAL();
-                dal.AddToFavourites(investor_id, opportunity_id);
+                Session["opportunity_id_Selected"] = e.CommandArgument.ToString();
+                //DAL dal = new DAL();
+                //dal.AddToFavourites(investor_id, opportunity_id);
             }
         }
 
@@ -58,6 +60,19 @@ namespace Acreage
                 {
                     fav_th.Visible = false;
                 }
+            }
+        }
+
+        protected void btn_Accept_Click(object sender, EventArgs e)
+        {
+            if (Session["opportunity_id_Selected"] != null)
+            {
+                lbl_msg.Text = "Added To favourites";
+                string opportunity_id = Session["opportunity_id_Selected"].ToString();
+                DAL dal = new DAL();
+                dal.AddToFavourites(investor_id, opportunity_id);
+                Session["opportunity_id_Selected"] = null;
+                LoadOpportunities();
             }
         }
     }

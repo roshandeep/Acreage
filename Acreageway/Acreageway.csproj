@@ -170,6 +170,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\InvestorManagement.aspx" />
+    <Content Include="Admin\IssuerManagement.aspx" />
+    <Content Include="Admin\PendingRequests.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -359,6 +362,27 @@
     </Compile>
     <Compile Include="Admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InvestorManagement.aspx.cs">
+      <DependentUpon>InvestorManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InvestorManagement.aspx.designer.cs">
+      <DependentUpon>InvestorManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IssuerManagement.aspx.cs">
+      <DependentUpon>IssuerManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IssuerManagement.aspx.designer.cs">
+      <DependentUpon>IssuerManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PendingRequests.aspx.cs">
+      <DependentUpon>PendingRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PendingRequests.aspx.designer.cs">
+      <DependentUpon>PendingRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

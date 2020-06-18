@@ -27,6 +27,10 @@
                         <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="[Manage]" runat="server" />
 
                     </dd>
+                    <dt> User ID:</dt>
+                    <dd> <%: UserID %> </dd>
+                    <dt> User Type:</dt>
+                    <dd> <%: UserType %> </dd>
                     <%--
                         Phone Numbers can used as a second factor of verification in a two-factor authentication system.
                         See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
@@ -51,12 +55,12 @@
                     <% } %>
                     --%>
 
-                    <dt>Two-Factor Authentication:</dt>
+                    <%--<dt>Two-Factor Authentication:</dt>--%>
                     <dd>
-                        <p>
+                        <%--<p>
                             There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
                             for details on setting up this ASP.NET application to support two-factor authentication.
-                        </p>
+                        </p>--%>
                         <% if (TwoFactorEnabled)
                           { %> 
                         <%--
