@@ -13,6 +13,7 @@ namespace Acreageway.Account
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            Session["Id"] = Guid.NewGuid().ToString();
             Session["Role"] = UserType.SelectedValue;
             Session["UserName"] = Email.Text;
             Session["FirstName"] = FirstName.Text;

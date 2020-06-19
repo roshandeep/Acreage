@@ -181,7 +181,7 @@ namespace Acreageway
             var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
             var role = roleManager.FindByNameAsync("Investor").Result;
 
-            dal.SaveSuitabilityTestResults(User.Identity.GetUserId().ToString(), questions, answers);
+            dal.SaveSuitabilityTestResults(Session["Id"].ToString(), questions, answers);
         }
 
         protected void btn_Next_Click(object sender, EventArgs e)

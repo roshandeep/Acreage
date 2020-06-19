@@ -70,10 +70,11 @@
         </div>
     </section>
     <section>
-        <div>
+        <div style="text-align:center;">
+            <asp:Button ID="btn_Add" runat="server" Text="Add Opportunities" OnClick="btn_Add_Click" Enabled="false" Visible="false"/>
             <asp:Repeater ID="rpt_Opportunity" runat="server">
                 <HeaderTemplate>
-                    <table cellspacing="2" border="1">
+                    <table cellspacing="2" border="1" style="margin: auto auto;">
                         <tr>
                             <th>
                                 <asp:Label ID="lbl_th_name" runat="server" Text="Name" /></th>

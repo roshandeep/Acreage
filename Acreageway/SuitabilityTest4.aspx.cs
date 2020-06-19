@@ -111,7 +111,7 @@ namespace Acreageway
             {
                 SaveAnswers();
                 lbl_msg.ForeColor = System.Drawing.Color.Green;
-                lbl_msg.Text = "KYC Information saved";
+                lbl_msg.Text = "Information saved";
             }
             else
             {
@@ -184,7 +184,7 @@ namespace Acreageway
             DAL dal = new DAL();
             var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
             var role = roleManager.FindByNameAsync("Investor").Result;
-            dal.SaveSuitabilityTestResults(User.Identity.GetUserId().ToString(), questions, answers);
+            dal.SaveSuitabilityTestResults(Session["Id"].ToString(), questions, answers);
         }
 
         protected void btn_Next_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@
                 });
         })
     </script>
-    <table>
+    <table style="margin-top:30px;">
         <tr>
             <td>
                 <asp:Label ID="lbl_oppotunity_name" runat="server" Text="Name"></asp:Label>
@@ -160,9 +160,10 @@
         <tr>
             <td>
                 <asp:Button ID="btn_Create" runat="server" Text="Create" OnClick="btn_Create_Click" />
+                <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
             </td>
             <td>
-                <asp:Button ID="btn_Return" runat="server" Text="Return" OnClick="btn_Return_Click" />
+                <asp:Button ID="btn_Return" runat="server" Text="Return" OnClick="btn_Return_Click" CausesValidation="false"/>
             </td>
         </tr>
     </table>

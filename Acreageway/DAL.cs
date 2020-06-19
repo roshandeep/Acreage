@@ -78,6 +78,30 @@ namespace Acreageway
             cnn.Close();
         }
 
+        public void InvestInOpportunity(string trans_id, string opp_id, string investor_id, double amount)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            //INSERT TRANSACTION
+            string sql = @"INSERT INTO opportunity_sale_transactions(transaction_id, investor_id, opportunity_id, invested_amt, transaction_timestamp) 
+                            VALUES(@transaction_id, @investor_id, @opportunity_id, @invested_amt, @transaction_timestamp)";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@transaction_id", trans_id));
+            cmd.Parameters.Add(new SqlParameter("@opportunity_id", opp_id));
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+            cmd.Parameters.Add(new SqlParameter("@invested_amt", amount));
+            cmd.Parameters.Add(new SqlParameter("@transaction_timestamp", DateTime.Now));
+            cmd.ExecuteNonQuery();
+
+            //UPDATE OPPORTUNITIES
+            sql = @"UPDATE opportunity SET amt_left = amt_left - @amt_left WHERE opportunity_id = @opportunity_id";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@amt_left", amount));
+            cmd.Parameters.Add(new SqlParameter("@opportunity_id", opp_id));
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public void CreateOpportunity(Opportunity obj)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
@@ -145,8 +169,9 @@ namespace Acreageway
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
             int count = 0;
-            string sql = "SELECT COUNT(filecategory) FROM suitability_test_uploadedDoc WHERE filecategory IN ('Broker Statement', 'Financial Assets', 'T4', 'NOA', 'BankSavings');";
+            string sql = "SELECT COUNT(filecategory) FROM suitability_test_uploadedDoc WHERE filecategory IN ('Broker Statement', 'Financial Assets', 'T4', 'NOA', 'BankSavings') AND investor_id = @investor_id;";
             cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             count = Convert.ToInt32(cmd.ExecuteScalar());
             cnn.Close();
             return count;

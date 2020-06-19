@@ -20,7 +20,7 @@ namespace Acreageway
             roleManager.Create(new IdentityRole()
             {
                 Id = Guid.NewGuid().ToString(),
-                Name = "Admin"
+                Name = "Issuer"
             });
 
         }

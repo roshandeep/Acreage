@@ -60,6 +60,10 @@ namespace Acreageway
             obj.total_investors = Convert.ToDouble(txt_total_investors.Text);
             DAL dal = new DAL();
             dal.CreateOpportunity(obj);
+
+            lbl_msg.ForeColor = System.Drawing.Color.Green;
+            lbl_msg.Text = "Opportunity Created. Will Be Approved by the Admin.";
+            
         }
 
         protected void btn_logo_Click1(object sender, EventArgs e)

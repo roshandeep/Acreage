@@ -7,13 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreageway
-{
-
-
-    public partial class OpportunityList
-    {
-
+namespace Acreageway {
+    
+    
+    public partial class OpportunityList {
+        
+        /// <summary>
+        /// btn_Add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Add;
+        
         /// <summary>
         /// rpt_Opportunity control.
         /// </summary>
@@ -22,7 +29,7 @@ namespace Acreageway
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rpt_Opportunity;
-
+        
         /// <summary>
         /// lbl_msg control.
         /// </summary>

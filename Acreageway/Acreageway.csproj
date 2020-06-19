@@ -244,6 +244,7 @@
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="InvestInOpportunity.aspx" />
     <Content Include="KYC.aspx" />
     <Content Include="ManageRoles.aspx" />
     <Content Include="libman.json" />
@@ -454,6 +455,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InvestInOpportunity.aspx.cs">
+      <DependentUpon>InvestInOpportunity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvestInOpportunity.aspx.designer.cs">
+      <DependentUpon>InvestInOpportunity.aspx</DependentUpon>
     </Compile>
     <Compile Include="KYC.aspx.cs">
       <DependentUpon>KYC.aspx</DependentUpon>

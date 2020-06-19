@@ -91,7 +91,7 @@ namespace Acreageway
 
             var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
             var role = roleManager.FindByNameAsync("Investor").Result;
-            dal.SaveSuitabilityTestResults(User.Identity.GetUserId().ToString(), questions, answers);
+            dal.SaveSuitabilityTestResults(Session["Id"].ToString(), questions, answers);
         }
 
         protected void btn_submit_Click(object sender, EventArgs e)
@@ -106,6 +106,7 @@ namespace Acreageway
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new ApplicationUser()
             {
+                Id = Session["Id"].ToString(),
                 UserName = Session["UserName"].ToString(),
                 Email = Session["UserName"].ToString(),
                 FirstName = Session["FirstName"].ToString(),

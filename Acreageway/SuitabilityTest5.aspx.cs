@@ -21,7 +21,7 @@ namespace Acreageway
         public void ShowUplodedDocuments()
         {
             DAL dal = new DAL();
-            string investor_id = User.Identity.GetUserId().ToString();
+            string investor_id = Session["Id"].ToString();
             gv_uploadedDocs.DataSource = dal.getUploadedDocs(investor_id);
             gv_uploadedDocs.DataBind();
 
@@ -42,7 +42,7 @@ namespace Acreageway
                 DAL dal = new DAL();
                 var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
                 var role = roleManager.FindByNameAsync("Investor").Result;
-                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "Broker Statement");
+                dal.SaveFile(Session["Id"].ToString(), filename, fileExtension, contentType, bytes, "Broker Statement");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -69,7 +69,7 @@ namespace Acreageway
                 DAL dal = new DAL();
                 var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
                 var role = roleManager.FindByNameAsync("Investor").Result;
-                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "Financial Assets");
+                dal.SaveFile(Session["Id"].ToString(), filename, fileExtension, contentType, bytes, "Financial Assets");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -96,7 +96,7 @@ namespace Acreageway
                 DAL dal = new DAL();
                 var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
                 var role = roleManager.FindByNameAsync("Investor").Result;
-                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "T4");
+                dal.SaveFile(Session["Id"].ToString(), filename, fileExtension, contentType, bytes, "T4");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -123,7 +123,7 @@ namespace Acreageway
                 DAL dal = new DAL();
                 var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
                 var role = roleManager.FindByNameAsync("Investor").Result;
-                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "NOA");
+                dal.SaveFile(Session["Id"].ToString(), filename, fileExtension, contentType, bytes, "NOA");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -150,7 +150,7 @@ namespace Acreageway
                 DAL dal = new DAL();
                 var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
                 var role = roleManager.FindByNameAsync("Investor").Result;
-                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "BankSavings");
+                dal.SaveFile(Session["Id"].ToString(), filename, fileExtension, contentType, bytes, "BankSavings");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -165,16 +165,16 @@ namespace Acreageway
         protected void btn_Next_Click(object sender, EventArgs e)
         {
             DAL dal = new DAL();
-            string investor_id = User.Identity.GetUserId().ToString();
+            string investor_id = Session["Id"].ToString();
             int count = dal.checkAllDocuments(investor_id);
-            if (count != 5)
+            if (count >= 5)
             {
-                lbl_warning.ForeColor = System.Drawing.Color.Red;
-                lbl_warning.Text = "Upload all Documents before you proceed.";
+                Response.Redirect("~/SuitabilityTest6.aspx", false);
             }
             else
             {
-                Response.Redirect("~/SuitabilityTest6.aspx", false);
+                lbl_warning.ForeColor = System.Drawing.Color.Red;
+                lbl_warning.Text = "Upload all Documents before you proceed.";
             }
         }
 
@@ -183,7 +183,7 @@ namespace Acreageway
             string uploaded_fileName = ((sender as LinkButton).CommandArgument).ToString();
             string fileName = "", contentType = "";
             DAL dal = new DAL();
-            string investor_id = User.Identity.GetUserId().ToString();
+            string investor_id = Session["Id"].ToString();
             DataTable dt = dal.getFileForDownload(investor_id, uploaded_fileName);
             if (dt != null)
             {

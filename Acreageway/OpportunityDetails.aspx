@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OpportunityDetails.aspx.cs" Inherits="Acreageway.OpportunityDetails" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -90,19 +91,21 @@
                 </tr>
 
 
-                <tr>
-                    <td>
+                <tr class="row">
+                    <td class="col-sm-4">
                         <asp:Button ID="btn_Back" runat="server" Text="Back" OnClick="btn_Back_Click" />
                     </td>
-                    <td>
+                    <td class="col-sm-4">
                         <asp:Button ID="btn_Invest" runat="server" Text="Invest" OnClick="btn_Invest_Click" />
-                        <asp:Button ID="btn_favourite" runat="server" Text="Favourite"/>
+                    </td>
+                    <td class="col-sm-4">
+                        <asp:Button ID="btn_favourite" runat="server" Text="Favourite" />
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="btn_favourite" PopupControlID="Panel1" CancelControlID="btn_DoNotAccept"></ajaxToolkit:ModalPopupExtender>
+    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="btn_favourite" PopupControlID="Panel1" CancelControlID="btn_DoNotAccept"></ajaxToolkit:ModalPopupExtender>
     <asp:Panel ID="Panel1" runat="server" align="center" Style="display: none">
         <div style="height: 60px; background-color: aliceblue;">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -114,7 +117,23 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
-        <asp:Button runat="server" ID="btn_Accept" Text="Accept" OnClick="btn_Accept_Click"/>
-        <asp:Button runat="server" ID="btn_DoNotAccept" Text="DoNotAccept"/>
+        <asp:Button runat="server" ID="btn_Accept" Text="Accept" OnClick="btn_Accept_Click" />
+        <asp:Button runat="server" ID="btn_DoNotAccept" Text="DoNotAccept" />
+    </asp:Panel>
+
+    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" TargetControlID="btn_Invest" PopupControlID="Panel2" CancelControlID="btn_DoNotAccept_Invest"></ajaxToolkit:ModalPopupExtender>
+    <asp:Panel ID="Panel2" runat="server" align="center" Style="display: none">
+        <div style="height: 60px; background-color: aliceblue;">
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <div>
+                        By submitting this form, the Client(s) certify that all information disclosed in this form is complete and true and acknowledge that such information shall be deemed complete, true and unchanged until such time as Durham Asset Management Inc. is advised in writing by the Client(s) of any change pertaining thereto. The Client(s) certify that it is their responsibility to notify Durham Asset Management Inc. of any changes to the above information.
+                
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <asp:Button runat="server" ID="btn_Accept_Invest" Text="Accept" OnClick="btn_Accept_Invest_Click" />
+        <asp:Button runat="server" ID="btn_DoNotAccept_Invest" Text="DoNotAccept" />
     </asp:Panel>
 </asp:Content>

@@ -2002,19 +2002,19 @@
                             </a>
                         </span>
                         <span class="navbar-caption-wrap">
-                            <a class="navbar-caption text-white display-4" href="#">Acerageway
+                            <a class="text-white" href="OpportunityList.aspx">Acerageway
                             </a>
                         </span>
                     </div>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item">
-                            <a class="nav-link link text-white display-4" href="~/">Services
+                    <ul class="nav navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li>
+                            <a class="text-white" href="~/">Services
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link link text-white display-4" href="~/">About Us
+                        <li>
+                            <a class="text-white" href="~/">About Us
                             </a>
                         </li>
                         <li>
@@ -2025,8 +2025,8 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a class="text-white" runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a class="text-white" runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

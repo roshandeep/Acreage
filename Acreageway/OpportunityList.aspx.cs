@@ -12,9 +12,24 @@ namespace Acreageway
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            EnableAddOpporrunity();
             if (!IsPostBack)
             {
                 LoadOpportunities();
+            }
+        }
+
+        public void EnableAddOpporrunity()
+        {
+            if (User?.Identity.IsAuthenticated == true)
+            {
+                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var rolesList = manager.GetRoles(User.Identity.GetUserId());
+                if (rolesList.Contains("Issuer"))
+                {
+                    btn_Add.Enabled = true;
+                    btn_Add.Visible = true;
+                }
             }
         }
 
@@ -36,6 +51,9 @@ namespace Acreageway
             rpt_Opportunity.DataBind();
         }
 
-       
+        protected void btn_Add_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreateOpportunity.aspx", false);
+        }
     }
 }
