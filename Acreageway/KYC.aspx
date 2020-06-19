@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="KYC.aspx.cs" Inherits="Acreage.KYC" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="KYC.aspx.cs" Inherits="Acreageway.KYC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="Scripts/jquery-3.3.1.js"></script>
@@ -90,12 +90,43 @@
         });
     </script>
     <style>
+        form {
+            background: black;
+            color: #22C0A1;
+        }
+
+        #kycregistrationtable {
+            margin-top: 5rem;
+        }
     </style>
-    <table>
-        <tr>
-            <td>Marital Status
+    <table id="kycregistrationtable" class="container">
+        <tr class="row">
+
+            <td class="col-sm-6">Name
             </td>
-            <td>
+            <td class="col-sm-6">
+                <asp:DropDownList ID="ddl_salutation" runat="server" Style="width: 12rem">
+                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    <asp:ListItem Text="Mr." Value="Mr."></asp:ListItem>
+                    <asp:ListItem Text="Mrs." Value="Mrs."></asp:ListItem>
+                    <asp:ListItem Text="Ms." Value="Ms."></asp:ListItem>
+                    <asp:ListItem Text="Dr." Value="Dr."></asp:ListItem>
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator runat="server" ID="req_salutation" ControlToValidate="ddl_salutation" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+
+                <asp:TextBox ID="txt_Fname" runat="server" placeholder="Firstname"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="req_Fname" ControlToValidate="txt_Fname" ErrorMessage="* Required" ForeColor="Red" />
+                <asp:TextBox ID="txt_Lname" runat="server" placeholder="Lastname"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="req_Lname" ControlToValidate="txt_Lname" ErrorMessage="* Required" ForeColor="Red" />
+            </td>
+
+        </tr>
+        <br />
+        <tr class="row" style="margin-top: 1rem;">
+
+            <td class="col-sm-6">Marital Status
+            </td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_maritalStatus" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Single" Value="Single"></asp:ListItem>
@@ -107,66 +138,62 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ID="req_maritalStatus" ControlToValidate="ddl_maritalStatus" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             </td>
-            <td>Name
-            </td>
-            <td>
-                <asp:DropDownList ID="ddl_salutation" runat="server">
-                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    <asp:ListItem Text="Mr." Value="Mr."></asp:ListItem>
-                    <asp:ListItem Text="Mrs." Value="Mrs."></asp:ListItem>
-                    <asp:ListItem Text="Ms." Value="Ms."></asp:ListItem>
-                    <asp:ListItem Text="Dr." Value="Dr."></asp:ListItem>
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator runat="server" ID="req_salutation" ControlToValidate="ddl_salutation" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
 
-                <asp:TextBox ID="txt_Fname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ID="req_Fname" ControlToValidate="txt_Fname" ErrorMessage="* Required" ForeColor="Red" />
-                <asp:TextBox ID="txt_Lname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ID="req_Lname" ControlToValidate="txt_Lname" ErrorMessage="* Required" ForeColor="Red" />
-            </td>
+
+
         </tr>
-        <tr>
-            <td>Email
+
+        <tr class="row">
+            <td class="col-sm-6">Email
             </td>
-            <td>
-                <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
+            <td class="col-sm-6">
+                <asp:TextBox ID="txt_email" runat="server" Style="width: 25rem"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_email" ControlToValidate="txt_email" ErrorMessage="* Required" ForeColor="Red" />
                 <asp:RegularExpressionValidator ID="reg_email" runat="server" ErrorMessage="* Invalid Email Address" ControlToValidate="txt_email" ForeColor="Red" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></asp:RegularExpressionValidator>
             </td>
-            <td>Date Of Birth
+        </tr>
+
+        <tr class="row">
+
+            <td class="col-sm-6">Date Of Birth
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:TextBox ID="txt_dob" runat="server"></asp:TextBox>
                 <asp:CustomValidator ID="CvAgeValidation" ErrorMessage="Age must be Greater than equal to 18" ForeColor="Red" ClientValidationFunction="AgeValidation" runat="server" />
             </td>
         </tr>
-        <tr>
-            <td>Phone Number
+
+        <tr class="row">
+            <td class="col-sm-6">Phone Number
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:TextBox ID="txt_phoneNo" runat="server" placeholder="(xxx) (xxx) (xxxx)"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_phoneNo" ControlToValidate="txt_phoneNo" ErrorMessage="* Required" ForeColor="Red" />
                 <asp:RegularExpressionValidator ID="reg_phoneNo" runat="server" ForeColor="Red" ControlToValidate="txt_phoneNo" ErrorMessage="Enter 10 digit Phone Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
             </td>
-            <td>Address
+        </tr>
+        <tr class="row">
+            <td class="col-sm-6">Address
                 <asp:CheckBox ID="chkbx_address" runat="server" Text="Mailing Address same as Residential Address" Checked="true" ClientIDMode="Static" />
             </td>
-            <td>
-                <asp:TextBox ID="txt_address" runat="server" placeholder="House No. / Street Name"></asp:TextBox>
+            <td class="col-sm-6">
+                <asp:TextBox ID="txt_address" runat="server" placeholder="House No. / Street Name" Style="width: 25rem"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_address" ControlToValidate="txt_address" ErrorMessage="* Required" ForeColor="Red" />
             </td>
         </tr>
-        <tr>
-            <td>Country
+        <tr class="row">
+            <td class="col-sm-6">Country
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_country" runat="server">
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ID="req_country" ControlToValidate="ddl_country" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             </td>
-            <td>Province
+        </tr>
+        <tr class="row">
+            <td class="col-sm-6">Province
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_province" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Alberta" Value="Alberta"></asp:ListItem>
@@ -186,32 +213,35 @@
                 <asp:RequiredFieldValidator runat="server" ID="req_province" ControlToValidate="ddl_province" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             </td>
         </tr>
-        <tr>
-            <td>City
+        <tr class="row">
+            <td class="col-sm-6">City
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:TextBox ID="txt_city" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_city" ControlToValidate="txt_city" ErrorMessage="* Required" ForeColor="Red" />
                 <asp:RegularExpressionValidator ID="reg_city" runat="server" ForeColor="Red" ControlToValidate="txt_city" ErrorMessage="Enter a Valid City name" ValidationExpression="[a-zA-Z ]*$"></asp:RegularExpressionValidator>
             </td>
-            <td>Postal Code
+        </tr>
+        <tr class="row">
+            <td class="col-sm-6">Postal Code
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:TextBox ID="txt_postalCode" runat="server" placeholder="(xxx)(xxx)"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_postCode" ControlToValidate="txt_postalCode" ErrorMessage="* Required" ForeColor="Red" />
                 <asp:RegularExpressionValidator ID="req_postalCode" runat="server" ForeColor="Red" ControlToValidate="txt_postalCode" ErrorMessage="Enter a Valid Postal Code" ValidationExpression="[a-zA-Z0-9 ]{6}"></asp:RegularExpressionValidator>
             </td>
         </tr>
-        <tr id="residential_address1" style="display: none" runat="server">
-            <td>Residential Address
+        <tr id="residential_address1" style="display: none" runat="server" class="row">
+
+            <td class="col-sm-6">Residential Address
             </td>
-            <td>
-                <asp:TextBox ID="txt_residentialaddress" runat="server" placeholder="House No. / Street Name"></asp:TextBox>
+            <td class="col-sm-6">
+                <asp:TextBox ID="txt_residentialaddress" runat="server" placeholder="House No. / Street Name" Style="width: 25rem"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_resAddress" ControlToValidate="txt_residentialaddress" ErrorMessage="* Required" ForeColor="Red" ClientIDMode="Static" Enabled="false" />
             </td>
-            <td>Residential Province
+            <td class="col-sm-6">Residential Province
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_resProvince" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Alberta" Value="Alberta"></asp:ListItem>
@@ -230,28 +260,29 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ID="req_resProvince" ControlToValidate="ddl_resProvince" ErrorMessage="* Required" ForeColor="Red" ClientIDMode="Static" Enabled="false" />
             </td>
+
         </tr>
-        <tr id="residential_address2" style="display: none" runat="server">
-            <td>Residential City
+        <tr id="residential_address2" style="display: none" runat="server" class="row">
+            <td class="col-sm-6">Residential City
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:TextBox ID="txt_resCity" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_resCity" ControlToValidate="txt_resCity" ErrorMessage="* Required" ForeColor="Red" ClientIDMode="Static" Enabled="false" />
                 <asp:RegularExpressionValidator ID="reg_resCity" runat="server" ForeColor="Red" ControlToValidate="txt_resCity" ErrorMessage="Enter a Valid City name" ValidationExpression="[a-zA-Z ]*$" ClientIDMode="Static" Enabled="false"></asp:RegularExpressionValidator>
             </td>
-            <td>Residential Postal Code
+            <td class="col-sm-6">Residential Postal Code
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:TextBox ID="txt_resPostalCode" runat="server" placeholder="(xxx)(xxx)"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_resPostalCode" ControlToValidate="txt_resPostalCode" ErrorMessage="* Required" ForeColor="Red" ClientIDMode="Static" Enabled="false" />
                 <asp:RegularExpressionValidator ID="reg_resPostalCode" runat="server" ForeColor="Red" ControlToValidate="txt_resPostalCode" ErrorMessage="Enter a Valid Postal Code" ValidationExpression="[a-zA-Z0-9 ]{6}" ClientIDMode="Static" Enabled="false"></asp:RegularExpressionValidator>
             </td>
         </tr>
-        <tr>
+        <tr class="row">
             <td colspan="3">
                 <asp:Button ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
             </td>
 

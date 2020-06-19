@@ -1,13 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SuitabilityTest1.aspx.cs" Inherits="Acreage.SuitabilityTest" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="SuitabilityTest1.aspx.cs" Inherits="Acreageway.SuitabilityTest1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h4>Suitablity Profile</h4>
-    <table>
-        <tr>
-            <td>I
+    <table class="container">
+        <tr class="row">
+            <td class="col-md-6">
                 <asp:Label ID="lbl_investmentKnow" runat="server" Text="Investment Knowledge "></asp:Label>
             </td>
-            <td>
+            <td class="col-md-6">
                 <asp:DropDownList ID="ddl_investmentKnow" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Sophisticated" Value="Sophisticated"></asp:ListItem>
@@ -18,11 +17,11 @@
                 <asp:RequiredFieldValidator runat="server" ID="req_investmentKnow" ControlToValidate="ddl_investmentKnow" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-md-6">
                 <asp:Label ID="lbl_RiskTolerance" runat="server" Text="Risk Tolerance "></asp:Label>
             </td>
-            <td>
+            <td class="col-md-6">
                 <asp:DropDownList ID="ddl_riskTolerance" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="--SELECT--" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="High" Value="High"></asp:ListItem>
@@ -33,11 +32,11 @@
                 <asp:RequiredFieldValidator runat="server" ID="req_riskTolerance" ControlToValidate="ddl_riskTolerance" ErrorMessage="* Required" ForeColor="Red" InitialValue="--SELECT--" />
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-md-6">
                 <asp:Label ID="lbl_Income" runat="server" Text="Income "></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_income" runat="server" OnSelectedIndexChanged="ddl_income_SelectedIndexChanged" AutoPostBack="true">
                     <asp:ListItem Text="--SELECT--" Value="--SELECT--" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="1st Priority" Value="1st Priority"></asp:ListItem>
@@ -48,11 +47,11 @@
 
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row" >
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_Balance" runat="server" Text="Balance "></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_Balance" runat="server" OnSelectedIndexChanged="ddl_Balance_SelectedIndexChanged" AutoPostBack="true" Enabled="false">
                     <asp:ListItem Text="--SELECT--" Value="--SELECT--" Selected="True"></asp:ListItem>
                      <asp:ListItem Text="1st Priority" Value="1st Priority"></asp:ListItem>
@@ -63,11 +62,11 @@
 
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_Growth" runat="server" Text="Growth "></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_Growth" runat="server" OnSelectedIndexChanged="ddl_Growth_SelectedIndexChanged" AutoPostBack="true" Enabled="false">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                      <asp:ListItem Text="1st Priority" Value="1st Priority"></asp:ListItem>
@@ -78,11 +77,11 @@
 
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Button ID="btn_Save" runat="server" Text="Save" OnClick="btn_Save_Click"/>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" Enabled="false"/>
             </td>
         </tr>

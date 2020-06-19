@@ -39,7 +39,7 @@ namespace Acreageway.Admin
                 DataTable dataTable = new DataTable();
                 conn.Open();
                 SqlCommand cmd = new SqlCommand
-                    ("SELECT u.Id, u.Email, u.PhoneNumber, r.* " +
+                    ("SELECT u.Id, u.Email, u.PhoneNumber, u.FirstName, u.LastName, u.MailingAddress, u.Province, u.City, u.PostalCode, r.* " +
                     "FROM [dbo].[AspNetUsers] AS u " +
                     "INNER JOIN [dbo].[AspNetUserRoles] AS r " +
                     "ON [Id]=[UserId] " +
@@ -50,7 +50,13 @@ namespace Acreageway.Admin
                 SqlDataReader rdr = cmd.ExecuteReader();
                 dataTable.Columns.Add("ID");
                 dataTable.Columns.Add("Role");
+                dataTable.Columns.Add("FirstName");
+                dataTable.Columns.Add("LastName");
                 dataTable.Columns.Add("Email");
+                dataTable.Columns.Add("MailingAddress");
+                dataTable.Columns.Add("Province");
+                dataTable.Columns.Add("City");
+                dataTable.Columns.Add("PostalCode");
                 dataTable.Columns.Add("PhoneNumber");
 
                 while (rdr.Read())
@@ -58,7 +64,13 @@ namespace Acreageway.Admin
                     DataRow row = dataTable.NewRow();
                     row["ID"] = rdr["Id"];
                     row["Role"] = roleType;
+                    row["FirstName"] = rdr["FirstName"];
+                    row["LastName"] = rdr["LastName"];
                     row["Email"] = rdr["Email"];
+                    row["MailingAddress"] = rdr["MailingAddress"];
+                    row["Province"] = rdr["Province"];
+                    row["City"] = rdr["City"];
+                    row["PostalCode"] = rdr["PostalCode"];
                     row["PhoneNumber"] = rdr["PhoneNumber"];
                     dataTable.Rows.Add(row);
                 }
@@ -70,13 +82,23 @@ namespace Acreageway.Admin
                 }
                 else
                 {
-                    dataTable.NewRow();
+                    DataRow newrow = dataTable.NewRow();
+                    dataTable.Rows.Add(newrow);
                     investorsGrid.DataSource = dataTable;
                     investorsGrid.DataBind();
                     int columncount = investorsGrid.Columns.Count;
+                    if(columncount == 0)
+                    {
+                        BoundField newColumnName = new BoundField();
+
+                        newColumnName.DataField = "New DATAfield Name";
+                        newColumnName.HeaderText = "Investors";
+                        investorsGrid.Columns.Add(newColumnName);
+                        columncount += 1;
+                    }
                     investorsGrid.Rows[0].Cells.Clear();
                     investorsGrid.Rows[0].Cells.Add(new TableCell());
-                    investorsGrid.Rows[0].Cells[0].ColumnSpan = columncount;
+                    investorsGrid.Rows[0].Cells[0].ColumnSpan = columncount + 2;
                     investorsGrid.Rows[0].Cells[0].Text = "No Records Found";
                 }
 
@@ -119,28 +141,28 @@ namespace Acreageway.Admin
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            if(!String.IsNullOrEmpty(e.OldValues["role"].ToString()))
-            {
+            //if (!String.IsNullOrEmpty(e.OldValues["role"].ToString()))
+            //{
 
-            }
-            string oldRole = e.OldValues["role"].ToString();
-            string newRole = e.NewValues["role"].ToString();
+            //}
+            //string oldRole = e.OldValues["Role"].ToString();
+            //string newRole = e.NewValues["Role"].ToString();
             string userid = investorsGrid.DataKeys[e.RowIndex].Value.ToString();
 
-            if(oldRole != newRole)
-            {
-                var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
-                var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                if (roleManager.RoleExistsAsync(newRole).Result)
-                {
-                    userManager.AddToRole(userid, newRole);
-                }
-                else
-                {
-                    ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('" + "Error: " + newRole + " is not a known role." + "');", true);
-                }
+            //if (oldRole != newRole)
+            //{
+            //    var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            //    var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            //    if (roleManager.RoleExistsAsync(newRole).Result)
+            //    {
+            //        userManager.AddToRole(userid, newRole);
+            //    }
+            //    else
+            //    {
+            //        ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('" + "Error: " + newRole + " is not a known role." + "');", true);
+            //    }
 
-            }
+            //}
 
             GridViewRow row = investorsGrid.Rows[e.RowIndex];
             _ = (Label)row.FindControl("lblID");
@@ -149,13 +171,21 @@ namespace Acreageway.Admin
             //TextBox textphone = (TextBox)row.Cells[1].Controls[0];
             TextBox textemail = (TextBox)row.Cells[0].FindControl("txtEmail");
             TextBox textphone = (TextBox)row.Cells[1].FindControl("txtPhone");
+            TextBox textfirstname = (TextBox)row.FindControl("txtFirstName");
+            TextBox textlastname = (TextBox)row.FindControl("txtLastName");
+            TextBox textmailingaddress = (TextBox)row.FindControl("txtMailingAddress");
+            TextBox textprovince = (TextBox)row.FindControl("txtProvince");
+            TextBox textcity = (TextBox)row.FindControl("txtCity");
+            TextBox textpostalcode = (TextBox)row.FindControl("txtPostalCode");
             //TextBox textc = (TextBox)row.Cells[2].Controls[0];
             //TextBox textadd = (TextBox)row.FindControl("txtadd");  
             //TextBox textc = (TextBox)row.FindControl("txtc");  
             investorsGrid.EditIndex = -1;
             conn.Open();
             //SqlCommand cmd = new SqlCommand("SELECT * FROM detail", conn);  
-            SqlCommand cmd = new SqlCommand("UPDATE [dbo].[AspNetUsers] SET Email='" + textemail.Text + "',PhoneNumber='" + textphone.Text + "'WHERE Id='" + userid + "'", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE [dbo].[AspNetUsers] SET Email='" + textemail.Text + "',PhoneNumber='" + textphone.Text 
+                + "',FirstName='" + textfirstname.Text + "',LastName='" + textlastname.Text + "',MailingAddress='" + textmailingaddress.Text
+                + "',Province='" + textprovince.Text + "',City='" + textcity.Text + "',PostalCode='" + textpostalcode.Text + "'WHERE Id='" + userid + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
             Refresh_Data();

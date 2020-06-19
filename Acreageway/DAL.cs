@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Acreageway.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using Acreage.Models;
 
-namespace Acreage
+namespace Acreageway
 {
     public class DAL
     {
@@ -15,11 +13,23 @@ namespace Acreage
 
         SqlCommand cmd;
 
+        public DataTable LoadOpportunityList()
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT o.opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left FROM opportunity o WHERE is_active = '1' AND opportunity_status = 'Approved';";
+            cmd = new SqlCommand(sql, cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
         public DataTable LoadOpportunityList(string investor_id)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            //string sql = "SELECT opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left FROM opportunity WHERE is_active = '1' AND opportunity_status = 'Approved';";
             string sql = "SELECT o.opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left, dbo.IsfavourtedByInvestor(@investor_id, o.opportunity_id) AS Isfavourite FROM opportunity o WHERE is_active = '1' AND opportunity_status = 'Approved';";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
@@ -34,11 +44,7 @@ namespace Acreage
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = @"SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory
-                            FROM(SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory,
-                                           RANK() OVER(PARTITION BY filecategory ORDER BY added_timestamp DESC) AS doc_rank
-                                    FROM   suitability_test_uploadedDoc) ranked_table
-                            WHERE  doc_rank = 1 AND investor_id = @investor_id";
+            string sql = "SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id ORDER BY added_timestamp DESC";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             SqlDataAdapter da = new SqlDataAdapter(cmd);

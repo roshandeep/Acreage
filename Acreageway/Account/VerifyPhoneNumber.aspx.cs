@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Acreageway.Account
 {
@@ -11,7 +15,7 @@ namespace Acreageway.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var phonenumber = Request.QueryString["PhoneNumber"];
-            var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), phonenumber);
+            var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), phonenumber);           
             PhoneNumber.Value = phonenumber;
         }
 

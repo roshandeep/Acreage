@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreage {
+namespace Acreageway {
     
     
     public partial class SuitabilityTest6 {

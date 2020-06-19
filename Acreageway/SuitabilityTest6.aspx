@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SuitabilityTest6.aspx.cs" Inherits="Acreage.SuitabilityTest6" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SuitabilityTest6.aspx.cs" Inherits="Acreageway.SuitabilityTest6" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<%--    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>--%>
+
     <h4>POLITICALLY EXPOSED PERSON (PEP): CLIENT QUESTIONNAIRE</h4>
     <table>
         <tr>

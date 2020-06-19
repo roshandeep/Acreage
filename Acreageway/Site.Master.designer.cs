@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreageway {
-    
-    
-    public partial class SiteMaster {
-        
+namespace Acreageway
+{
+
+
+    public partial class SiteMaster
+    {
+
         /// <summary>
         /// adminnavbar control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Acreageway {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor adminnavbar;
-        
+
         /// <summary>
         /// MainContent control.
         /// </summary>

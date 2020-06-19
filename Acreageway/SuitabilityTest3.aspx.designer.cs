@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreage {
-    
-    
-    public partial class SuitabilityTest3 {
-        
+namespace Acreageway
+{
+
+
+    public partial class SuitabilityTest3
+    {
+
         /// <summary>
         /// lbl_timehorizon control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_timehorizon;
-        
+
         /// <summary>
         /// rdb_timehorizon control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_timehorizon;
-        
+
         /// <summary>
         /// req_timehorizon control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_timehorizon;
-        
+
         /// <summary>
         /// lbl_risktolerance control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_risktolerance;
-        
+
         /// <summary>
         /// rdb_risktolerance control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_risktolerance;
-        
+
         /// <summary>
         /// req_risktolerance control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_risktolerance;
-        
+
         /// <summary>
         /// lbl_timehorizon2 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_timehorizon2;
-        
+
         /// <summary>
         /// rdb_timehorizon2 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_timehorizon2;
-        
+
         /// <summary>
         /// req_timehorizon2 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_timehorizon2;
-        
+
         /// <summary>
         /// btn_Save control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Save;
-        
+
         /// <summary>
         /// btn_Next control.
         /// </summary>

@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Acreageway.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+                
 
-namespace Acreage
+namespace Acreageway 
 {
     public partial class SuitabilityTest6 : System.Web.UI.Page
     {
@@ -13,7 +16,6 @@ namespace Acreage
         {
 
         }
-
 
         protected void btn_Save_Click(object sender, EventArgs e)
         {
@@ -86,14 +88,53 @@ namespace Acreage
             answers.Add(hio);
 
             DAL dal = new DAL();
-            //TESTING
-            string investor_id = "7BBA56A7-82A3-4AE7-AAF1-7A8849649AE8";
-            dal.SaveSuitabilityTestResults(investor_id, questions, answers);
+
+            var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            var role = roleManager.FindByNameAsync("Investor").Result;
+            dal.SaveSuitabilityTestResults(User.Identity.GetUserId().ToString(), questions, answers);
         }
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
+            CreateUser();
             Response.Redirect("~/OpportunityList.aspx", false);
+        }
+
+        public void CreateUser()
+        {
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+            var user = new ApplicationUser()
+            {
+                UserName = Session["UserName"].ToString(),
+                Email = Session["UserName"].ToString(),
+                FirstName = Session["FirstName"].ToString(),
+                LastName = Session["LastName"].ToString(),
+                MailingAddress = Session["MailingAddress"].ToString(),
+                City = Session["City"].ToString(),
+                Province = Session["Province"].ToString(),
+                PhoneNumber = Session["PhoneNumber"].ToString(),
+                PostalCode = Session["PostalCode"].ToString()
+            };
+            IdentityResult result = manager.Create(user, Session["Password"].ToString());
+            if (result.Succeeded)
+            {
+                if (Session["Role"].ToString() != null && Session["Role"].ToString() == "1") //1 is Investor, 2 is Issuer
+                {
+                    manager.AddToRole(user.Id, "Investor");
+                }
+                if (Session["Role"].ToString() != null && Session["Role"].ToString() == "2") //1 is Investor, 2 is Issuer
+                {
+                    manager.AddToRole(user.Id, "Issuer");
+                }
+                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                Response.Redirect("~/Opportunity.aspx", false);
+            }
+            else
+            {
+                //ErrorMessage.Text = result.Errors.FirstOrDefault();
+            }
         }
     }
 }

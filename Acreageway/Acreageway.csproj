@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8F9DAF7B-413B-43D2-90FC-EE6E2EC82C7E}</ProjectGuid>
+    <ProjectGuid>{1D6D044F-3AFA-4552-B243-0AF2970F536C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -17,7 +17,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44304</IISExpressSSLPort>
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -172,7 +172,51 @@
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\InvestorManagement.aspx" />
     <Content Include="Admin\IssuerManagement.aspx" />
-    <Content Include="Admin\PendingRequests.aspx" />
+    <Content Include="assets\bootstrapcarouselswipe\bootstrap-carousel-swipe.js" />
+    <Content Include="assets\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\datatables\data-tables.bootstrap4.min.css" />
+    <Content Include="assets\datatables\data-tables.bootstrap4.min.js" />
+    <Content Include="assets\datatables\jquery.data-tables.min.js" />
+    <Content Include="assets\dropdown\css\style.css" />
+    <Content Include="assets\dropdown\js\nav-dropdown.js" />
+    <Content Include="assets\dropdown\js\navbar-dropdown.js" />
+    <Content Include="assets\facebook-plugin\facebook-script.js" />
+    <Content Include="assets\facebook-plugin\style.css" />
+    <Content Include="assets\formoid\formoid.min.js" />
+    <Content Include="assets\images\01.jpg" />
+    <Content Include="assets\images\02.jpg" />
+    <Content Include="assets\images\03.jpg" />
+    <Content Include="assets\images\05.jpg" />
+    <Content Include="assets\images\1.png" />
+    <Content Include="assets\images\2.png" />
+    <Content Include="assets\images\3.png" />
+    <Content Include="assets\images\4.png" />
+    <Content Include="assets\images\5.png" />
+    <Content Include="assets\images\background1.jpg" />
+    <Content Include="assets\images\background2.jpg" />
+    <Content Include="assets\images\background3.jpg" />
+    <Content Include="assets\images\background4.jpg" />
+    <Content Include="assets\images\background6.jpg" />
+    <Content Include="assets\images\logo2.png" />
+    <Content Include="assets\images\logo4.png" />
+    <Content Include="assets\mbr-clients-slider\mbr-clients-slider.js" />
+    <Content Include="assets\mbr-popup-btns\mbr-popup-btns.js" />
+    <Content Include="assets\mobirise\css\mbr-additional.css" />
+    <Content Include="assets\popper\popper.min.js" />
+    <Content Include="assets\smoothscroll\smooth-scroll.js" />
+    <Content Include="assets\socicon\css\styles.css" />
+    <Content Include="assets\socicon\fonts\socicon.svg" />
+    <Content Include="assets\tether\tether.min.css" />
+    <Content Include="assets\tether\tether.min.js" />
+    <Content Include="assets\theme\css\style.css" />
+    <Content Include="assets\theme\js\script.js" />
+    <Content Include="assets\touchswipe\jquery.touch-swipe.min.js" />
+    <Content Include="assets\web\assets\jquery\jquery.min.js" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.css" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.svg" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -193,10 +237,16 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
-    <Content Include="Admin\Web.config" />
+    <Content Include="assets\socicon\fonts\socicon.eot" />
+    <Content Include="assets\socicon\fonts\socicon.ttf" />
+    <Content Include="assets\socicon\fonts\socicon.woff" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="KYC.aspx" />
     <Content Include="ManageRoles.aspx" />
+    <Content Include="libman.json" />
     <Content Include="OpportunityDetails.aspx" />
     <Content Include="OpportunityList.aspx" />
     <Content Include="opportunity_images\DC.jpg" />
@@ -208,14 +258,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Scripts\jquery-ui.css" />
-    <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="Scripts\jquery-ui.min.css" />
-    <Content Include="Scripts\jquery-ui.min.js" />
-    <Content Include="Scripts\jquery-ui.structure.css" />
-    <Content Include="Scripts\jquery-ui.structure.min.css" />
-    <Content Include="Scripts\jquery-ui.theme.css" />
-    <Content Include="Scripts\jquery-ui.theme.min.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -377,13 +419,6 @@
     <Compile Include="Admin\IssuerManagement.aspx.designer.cs">
       <DependentUpon>IssuerManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\PendingRequests.aspx.cs">
-      <DependentUpon>PendingRequests.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\PendingRequests.aspx.designer.cs">
-      <DependentUpon>PendingRequests.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -434,6 +469,43 @@
     <Compile Include="ManageRoles.aspx.designer.cs">
       <DependentUpon>ManageRoles.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006180859508_InitialCreate.cs" />
+    <Compile Include="Migrations\202006180859508_InitialCreate.Designer.cs">
+      <DependentUpon>202006180859508_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180914213_FirstName.cs" />
+    <Compile Include="Migrations\202006180914213_FirstName.Designer.cs">
+      <DependentUpon>202006180914213_FirstName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180917203_Users.cs" />
+    <Compile Include="Migrations\202006180917203_Users.Designer.cs">
+      <DependentUpon>202006180917203_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180918400_FirstName1.cs" />
+    <Compile Include="Migrations\202006180918400_FirstName1.Designer.cs">
+      <DependentUpon>202006180918400_FirstName1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180924509_Commented.cs" />
+    <Compile Include="Migrations\202006180924509_Commented.Designer.cs">
+      <DependentUpon>202006180924509_Commented.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180927172_NullableFlags.cs" />
+    <Compile Include="Migrations\202006180927172_NullableFlags.Designer.cs">
+      <DependentUpon>202006180927172_NullableFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180928533_CommentedAgain.cs" />
+    <Compile Include="Migrations\202006180928533_CommentedAgain.Designer.cs">
+      <DependentUpon>202006180928533_CommentedAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180929502_NullableFlags2.cs" />
+    <Compile Include="Migrations\202006180929502_NullableFlags2.Designer.cs">
+      <DependentUpon>202006180929502_NullableFlags2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006182227382_Actually Nullable.cs" />
+    <Compile Include="Migrations\202006182227382_Actually Nullable.Designer.cs">
+      <DependentUpon>202006182227382_Actually Nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Investor.cs" />
     <Compile Include="Models\Issuer.cs" />
@@ -540,6 +612,35 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006180859508_InitialCreate.resx">
+      <DependentUpon>202006180859508_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180914213_FirstName.resx">
+      <DependentUpon>202006180914213_FirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180917203_Users.resx">
+      <DependentUpon>202006180917203_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180918400_FirstName1.resx">
+      <DependentUpon>202006180918400_FirstName1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180924509_Commented.resx">
+      <DependentUpon>202006180924509_Commented.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180927172_NullableFlags.resx">
+      <DependentUpon>202006180927172_NullableFlags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180928533_CommentedAgain.resx">
+      <DependentUpon>202006180928533_CommentedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180929502_NullableFlags2.resx">
+      <DependentUpon>202006180929502_NullableFlags2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006182227382_Actually Nullable.resx">
+      <DependentUpon>202006182227382_Actually Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -553,9 +654,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>13383</DevelopmentServerPort>
+          <DevelopmentServerPort>1190</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44304/</IISUrl>
+          <IISUrl>http://localhost:44370/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

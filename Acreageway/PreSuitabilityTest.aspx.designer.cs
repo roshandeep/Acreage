@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreage {
-    
-    
-    public partial class PreSuitabilityTest {
-        
+namespace Acreageway
+{
+
+
+    public partial class PreSuitabilityTest
+    {
+
         /// <summary>
         /// lbl_ques1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ques1;
-        
+
         /// <summary>
         /// txt_ans1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ans1;
-        
+
         /// <summary>
         /// req_ans1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_ans1;
-        
+
         /// <summary>
         /// validate control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator validate;
-        
+
         /// <summary>
         /// lbl_ques2 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ques2;
-        
+
         /// <summary>
         /// rdb_ans2 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_ans2;
-        
+
         /// <summary>
         /// req_ans2 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_ans2;
-        
+
         /// <summary>
         /// lbl_ques3 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ques3;
-        
+
         /// <summary>
         /// rdb_ans3 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_ans3;
-        
+
         /// <summary>
         /// req_ans3 control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_ans3;
-        
+
         /// <summary>
         /// lbl_ques4 control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ques4;
-        
+
         /// <summary>
         /// rdb_ans4 control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_ans4;
-        
+
         /// <summary>
         /// req_ans4 control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_ans4;
-        
+
         /// <summary>
         /// lbl_ques5 control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ques5;
-        
+
         /// <summary>
         /// rdb_ans5 control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdb_ans5;
-        
+
         /// <summary>
         /// req_ans5 control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_ans5;
-        
+
         /// <summary>
         /// lbl_emailId control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_emailId;
-        
+
         /// <summary>
         /// txt_email control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_email;
-        
+
         /// <summary>
         /// req_email control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_email;
-        
+
         /// <summary>
         /// RegularExpressionValidator1 control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-        
+
         /// <summary>
         /// lbl_fullname control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_fullname;
-        
+
         /// <summary>
         /// txt_fullname control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_fullname;
-        
+
         /// <summary>
         /// req_fullname control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_fullname;
-        
+
         /// <summary>
         /// RegularExpressionValidator2 control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
-        
+
         /// <summary>
         /// btn_Submit control.
         /// </summary>
@@ -236,7 +238,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Submit;
-        
+
         /// <summary>
         /// lbl_msg control.
         /// </summary>

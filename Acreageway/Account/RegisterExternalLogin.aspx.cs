@@ -1,9 +1,10 @@
-﻿using Acreageway.Models;
+﻿using System;
+using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using System;
-using System.Web;
+using Owin;
+using Acreageway.Models;
 
 namespace Acreageway.Account
 {
@@ -77,8 +78,8 @@ namespace Acreageway.Account
                     email.Text = loginInfo.Email;
                 }
             }
-        }
-
+        }        
+        
         protected void LogIn_Click(object sender, EventArgs e)
         {
             CreateAndLoginUser();
@@ -118,9 +119,9 @@ namespace Acreageway.Account
             AddErrors(result);
         }
 
-        private void AddErrors(IdentityResult result)
+        private void AddErrors(IdentityResult result) 
         {
-            foreach (var error in result.Errors)
+            foreach (var error in result.Errors) 
             {
                 ModelState.AddModelError("", error);
             }

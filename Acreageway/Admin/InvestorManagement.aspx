@@ -21,7 +21,23 @@
                                 <ItemTemplate>  
                                     <asp:Label ID="lblRole" runat="server" Text='<%# Bind("role") %>'></asp:Label>  
                                 </ItemTemplate>  
-                            </asp:TemplateField>  
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="First Name" SortExpression="firstname">  
+                                <EditItemTemplate>  
+                                    <asp:TextBox ID="txtFirstName" runat="server" Text='<%# Bind("firstname") %>'></asp:TextBox>  
+                                </EditItemTemplate>  
+                                <ItemTemplate>  
+                                    <asp:Label ID="lblFirstName" runat="server" Text='<%# Bind("firstname") %>'></asp:Label>  
+                                </ItemTemplate>  
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Last Name" SortExpression="lastname">  
+                                <EditItemTemplate>  
+                                    <asp:TextBox ID="txtLastName" runat="server" Text='<%# Bind("lastname") %>'></asp:TextBox>  
+                                </EditItemTemplate>  
+                                <ItemTemplate>  
+                                    <asp:Label ID="lblLastName" runat="server" Text='<%# Bind("lastname") %>'></asp:Label>  
+                                </ItemTemplate>  
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Email" SortExpression="email">  
                                 <EditItemTemplate>  
                                     <asp:TextBox ID="txtEmail" runat="server" Text='<%# Bind("email") %>'></asp:TextBox>  
@@ -29,7 +45,39 @@
                                 <ItemTemplate>  
                                     <asp:Label ID="lblEmail" runat="server" Text='<%# Bind("email") %>'></asp:Label>  
                                 </ItemTemplate>  
-                            </asp:TemplateField>  
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Mailing Address" SortExpression="mailingaddress">  
+                                <EditItemTemplate>  
+                                    <asp:TextBox ID="txtMailingAddress" runat="server" Text='<%# Bind("mailingaddress") %>'></asp:TextBox>  
+                                </EditItemTemplate>  
+                                <ItemTemplate>  
+                                    <asp:Label ID="lblMailingAddress" runat="server" Text='<%# Bind("mailingaddress") %>'></asp:Label>  
+                                </ItemTemplate>  
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Province" SortExpression="province">  
+                                <EditItemTemplate>  
+                                    <asp:TextBox ID="txtProvince" runat="server" Text='<%# Bind("province") %>'></asp:TextBox>  
+                                </EditItemTemplate>  
+                                <ItemTemplate>  
+                                    <asp:Label ID="lblProvince" runat="server" Text='<%# Bind("province") %>'></asp:Label>  
+                                </ItemTemplate>  
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="City" SortExpression="city">  
+                                <EditItemTemplate>  
+                                    <asp:TextBox ID="txtCity" runat="server" Text='<%# Bind("city") %>'></asp:TextBox>  
+                                </EditItemTemplate>  
+                                <ItemTemplate>  
+                                    <asp:Label ID="lblCity" runat="server" Text='<%# Bind("city") %>'></asp:Label>  
+                                </ItemTemplate>  
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Postal Code" SortExpression="postalcode">  
+                                <EditItemTemplate>  
+                                    <asp:TextBox ID="txtPostalCode" runat="server" Text='<%# Bind("postalcode") %>'></asp:TextBox>  
+                                </EditItemTemplate>  
+                                <ItemTemplate>  
+                                    <asp:Label ID="lblPostalCode" runat="server" Text='<%# Bind("postalcode") %>'></asp:Label>  
+                                </ItemTemplate>  
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Phone #" SortExpression="phonenumber">  
                                 <EditItemTemplate>  
                                     <asp:TextBox ID="txtPhone" runat="server" Text='<%# Bind("PhoneNumber") %>'></asp:TextBox>  

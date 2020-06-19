@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Globalization;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Globalization;
-using Acreage.Models;
+using Acreageway.Models;
 
-namespace Acreage
+namespace Acreageway
 {
     public partial class KYC : System.Web.UI.Page
     {
@@ -21,9 +20,9 @@ namespace Acreage
 
         public void LoadPrevisousState()
         {
-            if(ViewState["isChecked"] != null)
+            if (ViewState["isChecked"] != null)
             {
-                if(ViewState["isChecked"].ToString() == "False")
+                if (ViewState["isChecked"].ToString() == "False")
                 {
                     residential_address1.Style["display"] = "";
                     residential_address2.Style["display"] = "";
@@ -79,7 +78,7 @@ namespace Acreage
             kyc_obj.mailing_postal_code = txt_postalCode.Text.Trim();
             kyc_obj.address_similarity_flag = chkbx_address.Checked;
             ViewState["isChecked"] = chkbx_address.Checked;
-            if(chkbx_address.Checked == true)
+            if (chkbx_address.Checked == true)
             {
                 kyc_obj.residential_address = txt_address.Text.Trim();
                 kyc_obj.residential_city = txt_city.Text.Trim();

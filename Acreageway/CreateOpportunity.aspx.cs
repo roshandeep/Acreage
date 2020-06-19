@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Acreageway.Models;
+using System;
 using System.IO;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Acreage.Models;
 
-namespace Acreage
+namespace Acreageway
 {
     public partial class CreateOpportunity : System.Web.UI.Page
     {

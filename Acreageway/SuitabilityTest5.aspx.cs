@@ -1,28 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Data;
 using System.IO;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Acreage
+namespace Acreageway
 {
     public partial class SuitabilityTest5 : System.Web.UI.Page
     {
-        string investor_id = "7BBA56A7-82A3-4AE7-AAF1-7A8849649AE8";
-
+        //For TESTING 
+        //string investor_id = "2162ecfe-dcd0-4c5e-977c-842f70511bf1";
         protected void Page_Load(object sender, EventArgs e)
         {
             ShowUplodedDocuments();
+
         }
 
         public void ShowUplodedDocuments()
         {
             DAL dal = new DAL();
+            string investor_id = User.Identity.GetUserId().ToString();
             gv_uploadedDocs.DataSource = dal.getUploadedDocs(investor_id);
             gv_uploadedDocs.DataBind();
+
         }
 
         protected void btn_brkerstmt_Click(object sender, EventArgs e)
@@ -38,7 +40,9 @@ namespace Acreage
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
                 DAL dal = new DAL();
-                dal.SaveFile(investor_id, filename, fileExtension, contentType, bytes, "Broker Statement");
+                var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                var role = roleManager.FindByNameAsync("Investor").Result;
+                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "Broker Statement");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -63,7 +67,9 @@ namespace Acreage
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
                 DAL dal = new DAL();
-                dal.SaveFile(investor_id, filename, fileExtension, contentType, bytes, "Financial Assets");
+                var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                var role = roleManager.FindByNameAsync("Investor").Result;
+                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "Financial Assets");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -88,7 +94,9 @@ namespace Acreage
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
                 DAL dal = new DAL();
-                dal.SaveFile(investor_id, filename, fileExtension, contentType, bytes, "T4");
+                var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                var role = roleManager.FindByNameAsync("Investor").Result;
+                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "T4");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -113,7 +121,9 @@ namespace Acreage
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
                 DAL dal = new DAL();
-                dal.SaveFile(investor_id, filename, fileExtension, contentType, bytes, "NOA");
+                var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                var role = roleManager.FindByNameAsync("Investor").Result;
+                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "NOA");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -138,7 +148,9 @@ namespace Acreage
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
                 DAL dal = new DAL();
-                dal.SaveFile(investor_id, filename, fileExtension, contentType, bytes, "BankSavings");
+                var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                var role = roleManager.FindByNameAsync("Investor").Result;
+                dal.SaveFile(User.Identity.GetUserId().ToString(), filename, fileExtension, contentType, bytes, "BankSavings");
                 lbl_warning.ForeColor = System.Drawing.Color.Green;
                 lbl_warning.Text = "File Uploaded Successfully";
                 ShowUplodedDocuments();
@@ -153,9 +165,9 @@ namespace Acreage
         protected void btn_Next_Click(object sender, EventArgs e)
         {
             DAL dal = new DAL();
-            //string investor_id = "1";
+            string investor_id = User.Identity.GetUserId().ToString();
             int count = dal.checkAllDocuments(investor_id);
-            if(count != 5)
+            if (count != 5)
             {
                 lbl_warning.ForeColor = System.Drawing.Color.Red;
                 lbl_warning.Text = "Upload all Documents before you proceed.";
@@ -169,9 +181,9 @@ namespace Acreage
         protected void DownloadFile(object sender, EventArgs e)
         {
             string uploaded_fileName = ((sender as LinkButton).CommandArgument).ToString();
-            string fileName ="", contentType ="";
+            string fileName = "", contentType = "";
             DAL dal = new DAL();
-            string investor_id = "1";
+            string investor_id = User.Identity.GetUserId().ToString();
             DataTable dt = dal.getFileForDownload(investor_id, uploaded_fileName);
             if (dt != null)
             {

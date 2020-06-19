@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateOpportunity.aspx.cs" Inherits="Acreage.CreateOpportunity" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateOpportunity.aspx.cs" Inherits="Acreageway.CreateOpportunity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="Scripts/jquery-3.4.1.intellisense.js"></script>
-    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery-3.3.1.intellisense.js"></script>
     <script src="Scripts/jquery-ui-1.12.1.js"></script>
     <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
@@ -97,7 +97,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2"> 
+            <td colspan="2">
                 <asp:FileUpload ID="fu_logo" runat="server" ToolTip="Select Only JPEG/PNG File" />
             </td>
         </tr>
@@ -123,7 +123,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_totalamount" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator runat="server" ID="rexNumber" ControlToValidate="txt_totalamount" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true"/>
+                <asp:RegularExpressionValidator runat="server" ID="rexNumber" ControlToValidate="txt_totalamount" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true" />
                 <asp:RequiredFieldValidator runat="server" ID="req_totalamount" ControlToValidate="txt_totalamount" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>
@@ -133,7 +133,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_price_per_security" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1" ControlToValidate="txt_price_per_security" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true"/>
+                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1" ControlToValidate="txt_price_per_security" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true" />
                 <asp:RequiredFieldValidator runat="server" ID="req_price_per_security" ControlToValidate="txt_price_per_security" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>
@@ -143,7 +143,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_minimum_investment_per_investor" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="txt_minimum_investment_per_investor" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true"/>
+                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="txt_minimum_investment_per_investor" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true" />
                 <asp:RequiredFieldValidator runat="server" ID="req_minimum_investment_per_investor" ControlToValidate="txt_minimum_investment_per_investor" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>
@@ -153,7 +153,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_total_investors" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="txt_total_investors" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true"/>
+                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="txt_total_investors" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter numeric value!" ForeColor="Red" Display="Dynamic" EnableClientScript="true" />
                 <asp:RequiredFieldValidator runat="server" ID="req_total_investors" ControlToValidate="txt_total_investors" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>

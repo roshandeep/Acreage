@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreage {
-    
-    
-    public partial class SuitabilityTest2 {
-        
+namespace Acreageway
+{
+
+
+    public partial class SuitabilityTest2
+    {
+
         /// <summary>
         /// lbl_annualincome control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_annualincome;
-        
+
         /// <summary>
         /// ddl_annualincome control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_annualincome;
-        
+
         /// <summary>
         /// req_annualincome control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_annualincome;
-        
+
         /// <summary>
         /// lbl_household control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_household;
-        
+
         /// <summary>
         /// ddl_household control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_household;
-        
+
         /// <summary>
         /// req_household control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_household;
-        
+
         /// <summary>
         /// lbl_finAssets control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_finAssets;
-        
+
         /// <summary>
         /// ddl_finAssets control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_finAssets;
-        
+
         /// <summary>
         /// req_finAssets control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_finAssets;
-        
+
         /// <summary>
         /// lbl_netAssets control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_netAssets;
-        
+
         /// <summary>
         /// ddl_netAssets control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_netAssets;
-        
+
         /// <summary>
         /// req_netAssets control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator req_netAssets;
-        
+
         /// <summary>
         /// btn_Save control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Save;
-        
+
         /// <summary>
         /// btn_Next control.
         /// </summary>

@@ -22,7 +22,7 @@ namespace Acreageway.Admin
 
         private void Refresh_Data()
         {
-            
+
             var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
             var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var role = roleManager.FindByNameAsync(roleType).Result;
@@ -78,12 +78,12 @@ namespace Acreageway.Admin
                     issuersGrid.Rows[0].Cells[0].ColumnSpan = columncount;
                     issuersGrid.Rows[0].Cells[0].Text = "No Records Found";
                 }
-               
+
                 conn.Close();
                 ViewState["dirState"] = dataTable;
                 ViewState["sortdr"] = "Asc";
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
@@ -94,7 +94,7 @@ namespace Acreageway.Admin
             }
 
 
-            
+
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

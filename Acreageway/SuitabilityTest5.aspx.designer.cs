@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreage {
-    
-    
-    public partial class SuitabilityTest5 {
-        
+namespace Acreageway
+{
+
+
+    public partial class SuitabilityTest5
+    {
+
         /// <summary>
         /// fu_brokerstmt control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fu_brokerstmt;
-        
+
         /// <summary>
         /// btn_brkerstmt control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_brkerstmt;
-        
+
         /// <summary>
         /// fu_finassets control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fu_finassets;
-        
+
         /// <summary>
         /// btn_finassets control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_finassets;
-        
+
         /// <summary>
         /// fu_t4 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fu_t4;
-        
+
         /// <summary>
         /// btn_t4 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_t4;
-        
+
         /// <summary>
         /// fu_noa control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fu_noa;
-        
+
         /// <summary>
         /// btn_noa control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_noa;
-        
+
         /// <summary>
         /// fu_bankSaving control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fu_bankSaving;
-        
+
         /// <summary>
         /// btn_bankSaving control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_bankSaving;
-        
+
         /// <summary>
         /// gv_uploadedDocs control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gv_uploadedDocs;
-        
+
         /// <summary>
         /// lbl_warning control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_warning;
-        
+
         /// <summary>
         /// btn_Next control.
         /// </summary>

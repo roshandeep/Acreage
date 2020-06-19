@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Data;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace Acreage
+namespace Acreageway
 {
     public partial class OpportunityDetails : System.Web.UI.Page
     {
@@ -30,7 +28,7 @@ namespace Acreage
             dt = dal.LoadOpportunityDetails(opp_id, name);
             if (dt != null)
             {
-                foreach(DataRow row in dt.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
                     lbl_name.Text = row["oppotunity_name"].ToString();
                     lbl_short_desc.Text = row["short_desc"].ToString();
@@ -68,16 +66,25 @@ namespace Acreage
 
         }
 
-        protected void btn_favourite_Click(object sender, EventArgs e)
+        protected void btn_Accept_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["Id"] != null && Request.QueryString["Name"] != null)
+            if (User?.Identity.IsAuthenticated == true)
             {
-                string opp_id = Request.QueryString["Id"].ToString();
-                string name = Request.QueryString["Name"].ToString();
-                DAL dal = new DAL();
-                string investor_id = "7BBA56A7-82A3-4AE7-AAF1-7A8849649AE8";
-                dal.AddToFavourites(investor_id, opp_id);
-                Response.Redirect("OpportunityDetails.aspx?Id=" + opp_id + "&Name=" + name, false);
+                if (Request.QueryString["Id"] != null && Request.QueryString["Name"] != null)
+                {
+                    string opp_id = Request.QueryString["Id"].ToString();
+                    string name = Request.QueryString["Name"].ToString();
+                    DAL dal = new DAL();
+
+                    var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                    var role = roleManager.FindByNameAsync("Investor").Result;
+                    dal.AddToFavourites(User.Identity.GetUserId().ToString(), opp_id);
+                    Response.Redirect("OpportunityDetails.aspx?Id=" + opp_id + "&Name=" + name, false);
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Account/Login.aspx/?ReturnUrl=" + HttpContext.Current.Request.Url.AbsoluteUri);
             }
         }
     }

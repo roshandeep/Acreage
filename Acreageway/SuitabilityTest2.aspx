@@ -1,13 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SuitabilityTest2.aspx.cs" Inherits="Acreage.SuitabilityTest2" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SuitabilityTest2.aspx.cs" Inherits="Acreageway.SuitabilityTest2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h4>Financial Information</h4>
-    <table>
-        <tr>
-            <td>
+    <table class="container">
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_annualincome" runat="server" Text="Individual Annual Income (in CAD)"></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_annualincome" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Under $75,000" Value="Under $75,000"></asp:ListItem>
@@ -18,11 +17,11 @@
                 <asp:RequiredFieldValidator runat="server" ID="req_annualincome" ControlToValidate="ddl_annualincome" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_household" runat="server" Text="Annual income household"></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_household" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Under $125,000" Value="Under $125,000"></asp:ListItem>
@@ -33,11 +32,11 @@
                 <asp:RequiredFieldValidator runat="server" ID="req_household" ControlToValidate="ddl_household" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_finAssets" runat="server" Text="Financial Assets "></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_finAssets" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Under $100,000" Value="Under $100,000"></asp:ListItem>
@@ -49,11 +48,11 @@
 
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Label ID="lbl_netAssets" runat="server" Text="Net Assets "></asp:Label>
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:DropDownList ID="ddl_netAssets" runat="server">
                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Under $500,000" Value="Under $500,000"></asp:ListItem>
@@ -65,11 +64,11 @@
 
             </td>
         </tr>
-        <tr>
-            <td>
+        <tr class="row">
+            <td class="col-sm-6">
                 <asp:Button ID="btn_Save" runat="server" Text="Save" OnClick="btn_Save_Click" />
             </td>
-            <td>
+            <td class="col-sm-6">
                 <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" Enabled="false" />
             </td>
         </tr>

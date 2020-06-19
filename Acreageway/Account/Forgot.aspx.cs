@@ -1,9 +1,10 @@
-﻿using Acreageway.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using System;
+﻿using System;
 using System.Web;
 using System.Web.UI;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Owin;
+using Acreageway.Models;
 
 namespace Acreageway.Account
 {

@@ -1,7 +1,14 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Owin;
+using Acreageway.Models;
 
 namespace Acreageway.Account
 {
@@ -38,7 +45,6 @@ namespace Acreageway.Account
 
             // Enable this after setting up two-factor authentientication
             //PhoneNumber.Text = manager.GetPhoneNumber(User.Identity.GetUserId()) ?? String.Empty;
-
             UserID = User.Identity.GetUserId();
             var rolesList = manager.GetRoles(User.Identity.GetUserId());
             foreach (var item in rolesList)

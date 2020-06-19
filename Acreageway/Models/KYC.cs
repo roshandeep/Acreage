@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Acreage.Models
+namespace Acreageway.Models
 {
     public class KYC
     {

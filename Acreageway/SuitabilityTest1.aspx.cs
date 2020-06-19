@@ -1,21 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace Acreage
+namespace Acreageway
 {
-    public partial class SuitabilityTest : System.Web.UI.Page
+    public partial class SuitabilityTest1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        
-        public void BindDropDownLists(string  ddlchanged)
+
+        public void BindDropDownLists(string ddlchanged)
         {
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("--SELECT--", "--SELECT--");
@@ -37,7 +37,7 @@ namespace Acreage
                 ddl_Balance.DataValueField = "Key";
                 ddl_Balance.DataBind();
 
-                if(ddl_Balance.Items.FindByValue(income) != null && ddl_Balance.Items.FindByValue(income).ToString() != "--SELECT--")
+                if (ddl_Balance.Items.FindByValue(income) != null && ddl_Balance.Items.FindByValue(income).ToString() != "--SELECT--")
                 {
                     ddl_Balance.Items.Remove(income);
                 }
@@ -177,9 +177,11 @@ namespace Acreage
             answers.Add(growth);
 
             DAL dal = new DAL();
-            //TESTING
-            string investor_id = "7BBA56A7-82A3-4AE7-AAF1-7A8849649AE8";
-            dal.SaveSuitabilityTestResults(investor_id, questions, answers);
+            
+            var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            var role = roleManager.FindByNameAsync("Investor").Result;
+
+            dal.SaveSuitabilityTestResults(User.Identity.GetUserId().ToString(), questions, answers);
         }
 
         protected void btn_Next_Click(object sender, EventArgs e)

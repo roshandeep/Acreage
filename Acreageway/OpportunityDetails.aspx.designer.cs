@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Acreage {
-    
-    
-    public partial class OpportunityDetails {
-        
+namespace Acreageway
+{
+
+
+    public partial class OpportunityDetails
+    {
+
         /// <summary>
         /// lbl_name control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_name;
-        
+
         /// <summary>
         /// lbl_short_desc control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_short_desc;
-        
+
         /// <summary>
         /// lbl_long_desc control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_long_desc;
-        
+
         /// <summary>
         /// lbl_category control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_category;
-        
+
         /// <summary>
         /// lbl_type_of_security control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_type_of_security;
-        
+
         /// <summary>
         /// lbl_offeringType control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_offeringType;
-        
+
         /// <summary>
         /// img_Logo control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_Logo;
-        
+
         /// <summary>
         /// lbl_created_by control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_created_by;
-        
+
         /// <summary>
         /// lbl_created_timestamp control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_created_timestamp;
-        
+
         /// <summary>
         /// lbl_expiry_timestamp control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_expiry_timestamp;
-        
+
         /// <summary>
         /// lbl_total_amt control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_total_amt;
-        
+
         /// <summary>
         /// lbl_amt_left control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_amt_left;
-        
+
         /// <summary>
         /// lbl_price_per_security control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_price_per_security;
-        
+
         /// <summary>
         /// lbl_minimum_investment_per_investor control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_minimum_investment_per_investor;
-        
+
         /// <summary>
         /// lbl_total_investors control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_total_investors;
-        
+
         /// <summary>
         /// progress_bar control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_bar;
-        
+
         /// <summary>
         /// btn_Back control.
         /// </summary>
@@ -164,23 +166,5 @@ namespace Acreage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Back;
-        
-        /// <summary>
-        /// btn_Invest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Invest;
-        
-        /// <summary>
-        /// btn_favourite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_favourite;
     }
 }

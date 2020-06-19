@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Acreage
+namespace Acreageway
 {
     public partial class SuitabilityTest4 : System.Web.UI.Page
     {
@@ -107,11 +107,11 @@ namespace Acreage
         {
             btn_Next.Enabled = true;
             bool valid = ValidateData();
-            if(valid && Page.IsValid)
+            if (valid && Page.IsValid)
             {
                 SaveAnswers();
                 lbl_msg.ForeColor = System.Drawing.Color.Green;
-                lbl_msg.Text = "Information saved";
+                lbl_msg.Text = "KYC Information saved";
             }
             else
             {
@@ -171,7 +171,7 @@ namespace Acreage
                 answers.Add(total);
                 rowIndex++;
             }
-    
+
 
             officer = rdb_officer.SelectedItem.Text;
             questions.Add(lbl_officer.Text);
@@ -182,9 +182,9 @@ namespace Acreage
             answers.Add(controlPos);
 
             DAL dal = new DAL();
-            //TESTING
-            string investor_id = "7BBA56A7-82A3-4AE7-AAF1-7A8849649AE8";
-            dal.SaveSuitabilityTestResults(investor_id, questions, answers);
+            var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            var role = roleManager.FindByNameAsync("Investor").Result;
+            dal.SaveSuitabilityTestResults(User.Identity.GetUserId().ToString(), questions, answers);
         }
 
         protected void btn_Next_Click(object sender, EventArgs e)

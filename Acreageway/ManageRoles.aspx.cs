@@ -17,11 +17,10 @@ namespace Acreageway
         {
             var roleManager = Context.GetOwinContext().Get<ApplicationRoleManager>();
 
-
             roleManager.Create(new IdentityRole()
             {
                 Id = Guid.NewGuid().ToString(),
-                Name = "Issuer"
+                Name = "Admin"
             });
 
         }
@@ -29,7 +28,7 @@ namespace Acreageway
         protected void AddUserRole_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var result = manager.AddToRole("178af11c-630b-4bf7-b23f-2afed6663471", "Admin");
+            var result = manager.AddToRole("5151f34a-6b80-421d-836b-16a022f5848a", "Admin");
 
         }
     }
