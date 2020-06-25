@@ -130,7 +130,7 @@ namespace Acreageway
                 }
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                Response.Redirect("~/Opportunity.aspx", false);
+                Response.Redirect("~/KYC.aspx", false);
             }
             else
             {

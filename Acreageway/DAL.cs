@@ -17,7 +17,9 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT o.opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left FROM opportunity o WHERE is_active = '1' AND opportunity_status = 'Approved';";
+            string sql = @"SELECT o.opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, 
+                                    opportunity_status, total_amt, amt_left FROM opportunity o 
+                            WHERE is_active = '1' AND opportunity_status = 'Approved';";
             cmd = new SqlCommand(sql, cnn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -30,7 +32,9 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT o.opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left, dbo.IsfavourtedByInvestor(@investor_id, o.opportunity_id) AS Isfavourite FROM opportunity o WHERE is_active = '1' AND opportunity_status = 'Approved';";
+            string sql = @"SELECT o.opportunity_id, oppotunity_name, short_desc, created_by, created_timestamp, expiry_timestamp, 
+                                    opportunity_status, total_amt, amt_left, dbo.IsfavourtedByInvestor(@investor_id, o.opportunity_id) AS Isfavourite 
+                            FROM opportunity o WHERE is_active = '1' AND opportunity_status = 'Approved';";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -44,7 +48,8 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id ORDER BY added_timestamp DESC";
+            string sql = @"SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory 
+                            FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id ORDER BY added_timestamp DESC";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -106,7 +111,13 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "INSERT INTO opportunity(opportunity_id, oppotunity_name, opportunity_imgName, opportunity_contentType, image_data, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left, offering_type, type_of_security, price_per_security, category, short_desc, long_desc, minimum_investment_per_investor, total_investors, is_active) VALUES(@opportunity_id, @oppotunity_name, @opportunity_imgName, @opportunity_contentType, @image_data, @created_by, @created_timestamp, @expiry_timestamp, @opportunity_status, @total_amt, @amt_left, @offering_type, @type_of_security, @price_per_security, @category, @short_desc, @long_desc, @minimum_investment_per_investor, @total_investors, @is_active)";
+            string sql = @"INSERT INTO opportunity(opportunity_id, oppotunity_name, opportunity_imgName, opportunity_contentType, image_data, created_by, created_timestamp, 
+                                                    expiry_timestamp, opportunity_status, total_amt, amt_left, offering_type, type_of_security, price_per_security, category, 
+                                                    short_desc, long_desc, minimum_investment_per_investor, total_investors, is_active) 
+                            VALUES(@opportunity_id, @oppotunity_name, @opportunity_imgName, @opportunity_contentType, @image_data, @created_by, 
+                                    @created_timestamp, @expiry_timestamp, @opportunity_status, @total_amt, @amt_left, @offering_type, 
+                                    @type_of_security, @price_per_security, @category, @short_desc, @long_desc, @minimum_investment_per_investor, 
+                                    @total_investors, @is_active)";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@opportunity_id", obj.opportunity_id));
             cmd.Parameters.Add(new SqlParameter("@oppotunity_name", obj.opportunity_name));
@@ -136,7 +147,8 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id AND uploaded_fileName = @uploaded_fileName";
+            string sql = @"SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data 
+                            FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id AND uploaded_fileName = @uploaded_fileName";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             cmd.Parameters.Add(new SqlParameter("@uploaded_fileName", uploaded_fileName));
@@ -151,7 +163,8 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "INSERT INTO suitability_test_uploadedDoc(investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory, added_timestamp) VALUES(@investor_id, @uploaded_fileName, @file_extension, @file_contentType, @file_data, @filecategory, @added_timestamp)";
+            string sql = @"INSERT INTO suitability_test_uploadedDoc(investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory, added_timestamp) 
+                            VALUES(@investor_id, @uploaded_fileName, @file_extension, @file_contentType, @file_data, @filecategory, @added_timestamp)";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             cmd.Parameters.Add(new SqlParameter("@uploaded_fileName", filename));
@@ -169,7 +182,8 @@ namespace Acreageway
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
             int count = 0;
-            string sql = "SELECT COUNT(filecategory) FROM suitability_test_uploadedDoc WHERE filecategory IN ('Broker Statement', 'Financial Assets', 'T4', 'NOA', 'BankSavings') AND investor_id = @investor_id;";
+            string sql = @"SELECT COUNT(filecategory) FROM suitability_test_uploadedDoc 
+                            WHERE filecategory IN ('Broker Statement', 'Financial Assets', 'T4', 'NOA', 'BankSavings') AND investor_id = @investor_id;";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -181,7 +195,12 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT opportunity_id, oppotunity_name, opportunity_imgName, opportunity_contentType, image_data, created_by, created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left, offering_type, type_of_security, price_per_security, category, short_desc, long_desc, minimum_investment_per_investor, total_investors FROM opportunity WHERE is_active = '1' AND opportunity_status = 'Approved' AND opportunity_id = @opportunity_id AND oppotunity_name = @oppotunity_name; ";
+            string sql = @"SELECT opportunity_id, oppotunity_name, opportunity_imgName, opportunity_contentType, image_data, created_by, 
+                            created_timestamp, expiry_timestamp, opportunity_status, total_amt, amt_left, offering_type, type_of_security, 
+                            price_per_security, category, short_desc, long_desc, minimum_investment_per_investor, total_investors 
+                            FROM opportunity 
+                            WHERE is_active = '1' AND opportunity_status = 'Approved' AND opportunity_id = @opportunity_id 
+                                    AND oppotunity_name = @oppotunity_name; ";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@opportunity_id", opp_id));
             cmd.Parameters.Add(new SqlParameter("@oppotunity_name", name));
@@ -196,7 +215,12 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "INSERT INTO user_KYC(userid, user_type, salutation, full_name, marital_status, email_address, date_of_birth, phone_no, address_similarity_flag, mailing_address, city, province, postal_code, country, residential_address, residential_city, residential_province, residential_postal_code, residential_country, kyc_timestamp) VALUES(@userid, @user_type, @salutation, @full_name, @marital_status, @email_address, @date_of_birth, @phone_no, @address_similarity_flag, @mailing_address, @city, @province, @postal_code, @country, @residential_address, @residential_city, @residential_province, @residential_postal_code, @residential_country, @kyc_timestamp)";
+            string sql = @"INSERT INTO user_KYC(userid, user_type, salutation, full_name, marital_status, email_address, date_of_birth, phone_no, 
+                                address_similarity_flag, mailing_address, city, province, postal_code, country, residential_address, residential_city, 
+                                residential_province, residential_postal_code, residential_country, kyc_timestamp) 
+                        VALUES(@userid, @user_type, @salutation, @full_name, @marital_status, @email_address, @date_of_birth, @phone_no, 
+                                @address_similarity_flag, @mailing_address, @city, @province, @postal_code, @country, @residential_address, @residential_city, 
+                                    @residential_province, @residential_postal_code, @residential_country, @kyc_timestamp)";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userid", kyc_obj.userid));
             cmd.Parameters.Add(new SqlParameter("@user_type", kyc_obj.user_type));
@@ -237,6 +261,59 @@ namespace Acreageway
                 cmd.ExecuteNonQuery();
             }
             cnn.Close();
+        }
+
+        public DataTable UserFavourites(string investor_id)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = @"SELECT o.oppotunity_name, o.opportunity_status, o.total_amt, o.amt_left, o.offering_type, o.type_of_security, o.price_per_security, o.category, o.short_desc, o.image_data, f.date_favourited
+                            FROM opportunity o INNER JOIN favourited_oppurtunity f
+                            ON o.opportunity_id = f.opportunity_id
+                            WHERE f.investor_id = @investor_id";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
+        public DataTable UserInvestments(string investor_id)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = @"SELECT o.oppotunity_name, o.opportunity_status, o.total_amt, o.amt_left, o.offering_type, o.type_of_security, o.price_per_security, o.category, o.short_desc, o.image_data,
+		                    t.transaction_id, CONVERT(VARCHAR(10), t.transaction_timestamp, 101) AS transaction_timestamp, t.invested_amt
+                            FROM opportunity o INNER JOIN opportunity_sale_transactions t
+                            ON o.opportunity_id = t.opportunity_id
+                            WHERE t.investor_id = @investor_id";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
+        public DataTable UserKYCDetails(string investor_id)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = @"SELECT kyc_id, userid, user_type, salutation, full_name, marital_status, email_address,CONVERT(VARCHAR(10), date_of_birth, 101) AS date_of_birth, phone_no,
+		                    mailing_address, city, province, postal_code, country, residential_address, residential_city, residential_province, 
+		                    residential_postal_code, residential_country, CONVERT(VARCHAR(10), kyc_timestamp, 101) AS kyc_timestamp
+                            FROM user_KYC 
+                            WHERE user_KYC.userid = @investor_id";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
         }
     }
 }

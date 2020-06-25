@@ -10,412 +10,322 @@
 namespace Acreageway {
     
     
-    public partial class CreateOpportunity {
+    public partial class UserKYCDetails {
         
         /// <summary>
-        /// lbl_oppotunity_name control.
+        /// kyc_table control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_oppotunity_name;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl kyc_table;
         
         /// <summary>
-        /// txt_oppotunity_name control.
+        /// Kyc_ID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_oppotunity_name;
+        protected global::System.Web.UI.WebControls.Label Kyc_ID;
         
         /// <summary>
-        /// req_oppotunity_name control.
+        /// lbl_kyc_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_oppotunity_name;
+        protected global::System.Web.UI.WebControls.Label lbl_kyc_id;
         
         /// <summary>
-        /// lbl_offeringType control.
+        /// UserType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_offeringType;
+        protected global::System.Web.UI.WebControls.Label UserType;
         
         /// <summary>
-        /// ddl_offeringType control.
+        /// lbl_user_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_offeringType;
+        protected global::System.Web.UI.WebControls.Label lbl_user_type;
         
         /// <summary>
-        /// req_offeringType control.
+        /// Full_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_offeringType;
+        protected global::System.Web.UI.WebControls.Label Full_Name;
         
         /// <summary>
-        /// lbl_type_of_security control.
+        /// lbl_fullname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_type_of_security;
+        protected global::System.Web.UI.WebControls.Label lbl_fullname;
         
         /// <summary>
-        /// ddl_type_of_security control.
+        /// marital_status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_type_of_security;
+        protected global::System.Web.UI.WebControls.Label marital_status;
         
         /// <summary>
-        /// req_type_of_security control.
+        /// lbl_marital_status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_type_of_security;
+        protected global::System.Web.UI.WebControls.Label lbl_marital_status;
         
         /// <summary>
-        /// lbl_category control.
+        /// email_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_category;
+        protected global::System.Web.UI.WebControls.Label email_address;
         
         /// <summary>
-        /// ddl_category control.
+        /// lbl_email_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_category;
+        protected global::System.Web.UI.WebControls.Label lbl_email_address;
         
         /// <summary>
-        /// req_category control.
+        /// dob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_category;
+        protected global::System.Web.UI.WebControls.Label dob;
         
         /// <summary>
-        /// lbl_short_desc control.
+        /// lbl_date_of_birth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_short_desc;
+        protected global::System.Web.UI.WebControls.Label lbl_date_of_birth;
         
         /// <summary>
-        /// txt_short_desc control.
+        /// phone_no control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_short_desc;
+        protected global::System.Web.UI.WebControls.Label phone_no;
         
         /// <summary>
-        /// req_risktolerance control.
+        /// lbl_phone_no control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_risktolerance;
+        protected global::System.Web.UI.WebControls.Label lbl_phone_no;
         
         /// <summary>
-        /// lbl_long_desc control.
+        /// mailing_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_long_desc;
+        protected global::System.Web.UI.WebControls.Label mailing_address;
         
         /// <summary>
-        /// txt_long_desc control.
+        /// lbl_mailing_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_long_desc;
+        protected global::System.Web.UI.WebControls.Label lbl_mailing_address;
         
         /// <summary>
-        /// req_long_desc control.
+        /// city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_long_desc;
+        protected global::System.Web.UI.WebControls.Label city;
         
         /// <summary>
-        /// fu_logo control.
+        /// lbl_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_logo;
+        protected global::System.Web.UI.WebControls.Label lbl_city;
         
         /// <summary>
-        /// req_fu control.
+        /// province control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_fu;
+        protected global::System.Web.UI.WebControls.Label province;
         
         /// <summary>
-        /// lbl_startdate control.
+        /// lbl_province control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_startdate;
+        protected global::System.Web.UI.WebControls.Label lbl_province;
         
         /// <summary>
-        /// txt_startdate control.
+        /// postal_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_startdate;
+        protected global::System.Web.UI.WebControls.Label postal_code;
         
         /// <summary>
-        /// CalendarExtender1 control.
+        /// lbl_postal_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
+        protected global::System.Web.UI.WebControls.Label lbl_postal_code;
         
         /// <summary>
-        /// req_startdate control.
+        /// country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_startdate;
+        protected global::System.Web.UI.WebControls.Label country;
         
         /// <summary>
-        /// lbl_enddate control.
+        /// lbl_country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_enddate;
+        protected global::System.Web.UI.WebControls.Label lbl_country;
         
         /// <summary>
-        /// txt_enddate control.
+        /// residential_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_enddate;
+        protected global::System.Web.UI.WebControls.Label residential_address;
         
         /// <summary>
-        /// CalendarExtender2 control.
+        /// lbl_residential_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
+        protected global::System.Web.UI.WebControls.Label lbl_residential_address;
         
         /// <summary>
-        /// req_enddate control.
+        /// residential_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_enddate;
+        protected global::System.Web.UI.WebControls.Label residential_city;
         
         /// <summary>
-        /// lbl_totalamount control.
+        /// lbl_residential_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_totalamount;
+        protected global::System.Web.UI.WebControls.Label lbl_residential_city;
         
         /// <summary>
-        /// txt_totalamount control.
+        /// residential_province control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalamount;
+        protected global::System.Web.UI.WebControls.Label residential_province;
         
         /// <summary>
-        /// rexNumber control.
+        /// lbl_residential_province control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rexNumber;
+        protected global::System.Web.UI.WebControls.Label lbl_residential_province;
         
         /// <summary>
-        /// req_totalamount control.
+        /// residential_postal_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_totalamount;
+        protected global::System.Web.UI.WebControls.Label residential_postal_code;
         
         /// <summary>
-        /// lbl_price_per_security control.
+        /// lbl_residential_postal_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_price_per_security;
+        protected global::System.Web.UI.WebControls.Label lbl_residential_postal_code;
         
         /// <summary>
-        /// txt_price_per_security control.
+        /// kyc_timestamp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_price_per_security;
+        protected global::System.Web.UI.WebControls.Label kyc_timestamp;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// lbl_kyc_timestamp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-        
-        /// <summary>
-        /// req_price_per_security control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_price_per_security;
-        
-        /// <summary>
-        /// lbl_minimum_investment_per_investor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_minimum_investment_per_investor;
-        
-        /// <summary>
-        /// txt_minimum_investment_per_investor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_minimum_investment_per_investor;
-        
-        /// <summary>
-        /// RegularExpressionValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
-        
-        /// <summary>
-        /// req_minimum_investment_per_investor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_minimum_investment_per_investor;
-        
-        /// <summary>
-        /// lbl_total_investors control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_investors;
-        
-        /// <summary>
-        /// txt_total_investors control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_total_investors;
-        
-        /// <summary>
-        /// RegularExpressionValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
-        
-        /// <summary>
-        /// req_total_investors control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_total_investors;
-        
-        /// <summary>
-        /// btn_Create control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Create;
+        protected global::System.Web.UI.WebControls.Label lbl_kyc_timestamp;
         
         /// <summary>
         /// lbl_msg control.
@@ -427,12 +337,12 @@ namespace Acreageway {
         protected global::System.Web.UI.WebControls.Label lbl_msg;
         
         /// <summary>
-        /// btn_Return control.
+        /// btn_return control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Return;
+        protected global::System.Web.UI.WebControls.Button btn_return;
     }
 }

@@ -11,7 +11,6 @@
 
 
     <link rel="canonical" href="./">
-
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -20,6 +19,20 @@
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
+    <script src="https://apis.google.com/js/plusone.js"></script>
+    <script src="assets/facebook-plugin/facebook-script.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/dropdown/js/nav-dropdown.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+    <script src="assets/mbr-clients-slider/mbr-clients-slider.js"></script>
+    <script src="assets/theme/js/script.js"></script>
 
     <style amp-boilerplate>
         body {
@@ -1859,13 +1872,14 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style>
         form {
             background: black;
             color: #22C0A1;
+            margin-top: 2.6rem;
         }
 
         #MainContent_txt_ans1,
@@ -1896,7 +1910,6 @@
         #MainContent_ddl_netAssets,
         #MainContent_txt_residentialaddress,
         #MainContent_txt_resCity {
-            height: 4rem;
             border-radius: 30px;
             border: none;
             width: 15rem;
@@ -2010,15 +2023,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li>
-                            <a class="text-white" href="~/">Services
+                            <a class="text-white" runat="server" id="adminnavbar" href="~/Admin/Default" visible="false">Admin
                             </a>
                         </li>
                         <li>
-                            <a class="text-white" href="~/">About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a runat="server" id="adminnavbar" href="~/Admin/Default" visible="false">Admin
+                            <a class="text-white" runat="server" id="userdashboard" href="~/UserDashboard" visible="false">User Dashboard
                             </a>
                         </li>
                     </ul>
@@ -2031,9 +2040,9 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a class="text-white" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" class="text-white" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -2042,7 +2051,7 @@
             </nav>
         </section>
 
-        <div class="container body-content" style="width: 90%;">
+        <div class="container body-content" style="width: 90%; padding-top: 30px;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
@@ -2051,19 +2060,6 @@
             </footer>
         </div>
     </form>
-<%--    <script src="assets/web/assets/jquery/jquery.min.js"></script>--%>
-    <script src="assets/popper/popper.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
-    <script src="https://apis.google.com/js/plusone.js"></script>
-    <script src="assets/facebook-plugin/facebook-script.js"></script>
-    <script src="assets/tether/tether.min.js"></script>
-    <script src="assets/smoothscroll/smooth-scroll.js"></script>
-    <script src="assets/dropdown/js/nav-dropdown.js"></script>
-    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-    <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-    <script src="assets/mbr-clients-slider/mbr-clients-slider.js"></script>
-    <script src="assets/theme/js/script.js"></script>
+
 </body>
 </html>

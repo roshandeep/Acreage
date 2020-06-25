@@ -24,8 +24,51 @@ namespace Acreageway.Account
             Session["PhoneNumber"] = PhoneNumber.Text;
             Session["PostalCode"] = PostalCode.Text;
             Session["Password"] = Password.Text;
-            Response.Redirect("~/SuitabilityTest1", true);
 
+            if(UserType.SelectedValue.Equals("1"))//1 is Investor, 2 is Issuer
+            {
+                Response.Redirect("~/SuitabilityTest1", true);
+            }
+            else
+            if(UserType.SelectedValue.Equals("2"))//1 is Investor, 2 is Issuer
+            {
+                CreateIssuer();
+                Response.Redirect("~/KYC.aspx", true);
+            }
+
+        }
+
+        protected void CreateIssuer()
+        {
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+            var user = new ApplicationUser()
+            {
+                Id = Session["Id"].ToString(),
+                UserName = Session["UserName"].ToString(),
+                Email = Session["UserName"].ToString(),
+                FirstName = Session["FirstName"].ToString(),
+                LastName = Session["LastName"].ToString(),
+                MailingAddress = Session["MailingAddress"].ToString(),
+                City = Session["City"].ToString(),
+                Province = Session["Province"].ToString(),
+                PhoneNumber = Session["PhoneNumber"].ToString(),
+                PostalCode = Session["PostalCode"].ToString()
+            };
+            IdentityResult result = manager.Create(user, Session["Password"].ToString());
+            if (result.Succeeded)
+            {
+                if (Session["Role"].ToString() != null && Session["Role"].ToString() == "2") //1 is Investor, 2 is Issuer
+                {
+                    manager.AddToRole(user.Id, "Issuer");
+                }
+                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+            }
+            else
+            {
+                //ErrorMessage.Text = result.Errors.FirstOrDefault();
+            }
         }
     }
 }

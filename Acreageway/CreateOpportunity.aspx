@@ -1,16 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateOpportunity.aspx.cs" Inherits="Acreageway.CreateOpportunity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="Scripts/jquery-3.3.1.js"></script>
-    <script src="Scripts/jquery-3.3.1.intellisense.js"></script>
-    <script src="Scripts/jquery-ui-1.12.1.js"></script>
-    <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
-    <script src="Scripts/jquery-ui.js"></script>
-    <link href="Scripts/jquery-ui.theme.css" rel="stylesheet" />
-    <link href="Scripts/jquery-ui.structure.css" rel="stylesheet" />
-    <link href="Scripts/jquery-ui.css" rel="stylesheet" />
+
     <script>
-        var dateToday = new Date();
+<%--        var dateToday = new Date();
         $(function () {
             $("#<%= txt_startdate.ClientID %>").datepicker(
                 {
@@ -26,7 +19,7 @@
                     changeYear: true,
                     minDate: dateToday,
                 });
-        })
+        })--%>
     </script>
     <table style="margin-top:30px;">
         <tr>
@@ -99,6 +92,7 @@
         <tr>
             <td colspan="2">
                 <asp:FileUpload ID="fu_logo" runat="server" ToolTip="Select Only JPEG/PNG File" />
+                <asp:RequiredFieldValidator ID="req_fu" runat="server" ControlToValidate="fu_logo" ErrorMessage="* Required" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -107,6 +101,8 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_startdate" runat="server"></asp:TextBox>
+                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txt_startdate" Format="MM/dd/yyyy"/>
+                <asp:RequiredFieldValidator runat="server" ID="req_startdate" ControlToValidate="txt_startdate" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>
         <tr>
@@ -115,6 +111,8 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_enddate" runat="server"></asp:TextBox>
+                <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txt_enddate" Format="MM/dd/yyyy"/>
+               <asp:RequiredFieldValidator runat="server" ID="req_enddate" ControlToValidate="txt_enddate" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>
         <tr>

@@ -12,6 +12,7 @@ namespace Acreageway
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CalendarExtender1.EndDate = DateTime.Now;
             if (!Page.IsPostBack)
             {
                 LoadCountries();
@@ -61,10 +62,9 @@ namespace Acreageway
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
             Models.KYC kyc_obj = new Models.KYC();
-            //For Testing
-            Guid user_id = Guid.NewGuid();
-            kyc_obj.userid = user_id.ToString();
-            kyc_obj.user_type = "Issuer";
+
+            kyc_obj.userid = Session["Id"].ToString();
+            kyc_obj.user_type = Session["Role"].ToString();
             kyc_obj.salutation = ddl_salutation.SelectedItem.Text;
             kyc_obj.full_name = txt_Fname.Text.Trim() + " " + txt_Lname.Text.Trim();
             kyc_obj.email_address = txt_email.Text.Trim();
@@ -101,6 +101,9 @@ namespace Acreageway
                 SaveAnswers(kyc_obj);
                 lbl_msg.ForeColor = System.Drawing.Color.Green;
                 lbl_msg.Text = "KYC Information saved";
+                btn_Submit.Enabled = false;
+                btn_return.Visible = true;
+                btn_return.Enabled = true;
             }
             else
             {
@@ -151,6 +154,11 @@ namespace Acreageway
         {
             DAL dal = new DAL();
             dal.SaveKYCAnswers(kyc_obj);
+        }
+
+        protected void btn_return_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/OpportunityList.aspx", false);
         }
     }
 }

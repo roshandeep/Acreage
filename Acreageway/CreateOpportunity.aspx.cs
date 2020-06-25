@@ -1,4 +1,5 @@
 ﻿using Acreageway.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.IO;
 using System.Web;
@@ -9,7 +10,10 @@ namespace Acreageway
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CalendarExtender1.StartDate = DateTime.Now;
+            CalendarExtender1.EndDate = DateTime.Now.AddDays(50);
+            CalendarExtender2.StartDate = DateTime.Now;
+            CalendarExtender2.EndDate = DateTime.Now.AddYears(2);
         }
 
         protected void btn_Create_Click(object sender, EventArgs e)
@@ -40,9 +44,7 @@ namespace Acreageway
 
             Guid opp_id = Guid.NewGuid();
             obj.opportunity_id = opp_id.ToString();
-            //obj.created_by = Session["issuer_id"].ToString();
-            Guid issuer_id = Guid.NewGuid();
-            obj.created_by = issuer_id.ToString();
+            obj.created_by = User.Identity.GetUserId().ToString();
             obj.opportunity_name = txt_oppotunity_name.Text.Trim();
             obj.offering_type = ddl_offeringType.SelectedItem.Text;
             obj.type_of_security = ddl_type_of_security.SelectedItem.Text;

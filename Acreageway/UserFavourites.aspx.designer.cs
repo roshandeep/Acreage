@@ -10,33 +10,24 @@
 namespace Acreageway {
     
     
-    public partial class SiteMaster {
+    public partial class UserFavourites {
         
         /// <summary>
-        /// adminnavbar control.
+        /// rpt_UserfavOpportunity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminnavbar;
+        protected global::System.Web.UI.WebControls.Repeater rpt_UserfavOpportunity;
         
         /// <summary>
-        /// userdashboard control.
+        /// btn_return control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor userdashboard;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button btn_return;
     }
 }

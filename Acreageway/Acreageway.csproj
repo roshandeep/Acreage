@@ -288,6 +288,10 @@
     <Content Include="SuitabilityTest4.aspx" />
     <Content Include="SuitabilityTest5.aspx" />
     <Content Include="SuitabilityTest6.aspx" />
+    <Content Include="UserDashboard.aspx" />
+    <Content Include="UserFavourites.aspx" />
+    <Content Include="UserInvestments.aspx" />
+    <Content Include="UserKYCDetails.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -597,6 +601,34 @@
     </Compile>
     <Compile Include="SuitabilityTest6.aspx.designer.cs">
       <DependentUpon>SuitabilityTest6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.aspx.cs">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.aspx.designer.cs">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserFavourites.aspx.cs">
+      <DependentUpon>UserFavourites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFavourites.aspx.designer.cs">
+      <DependentUpon>UserFavourites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInvestments.aspx.cs">
+      <DependentUpon>UserInvestments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInvestments.aspx.designer.cs">
+      <DependentUpon>UserInvestments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserKYCDetails.aspx.cs">
+      <DependentUpon>UserKYCDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserKYCDetails.aspx.designer.cs">
+      <DependentUpon>UserKYCDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

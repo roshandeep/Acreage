@@ -67,25 +67,42 @@ namespace Acreageway
             }
             else
             {
-                double amount = Convert.ToDouble(txt_investAmt.Text);
+                double amount_to_be_invested = Convert.ToDouble(txt_investAmt.Text);
                 double minimum_investment_per_investor = Convert.ToDouble(ViewState["minimum_investment_per_investor"]);
-                if (amount < minimum_investment_per_investor)
-                {
-                    lbl_msg.ForeColor = System.Drawing.Color.Red;
-                    lbl_msg.Text = "Enter an amount greater than the Minimum Amount";
-                }
-                else
+                bool isValid = CheckValidTransaction();
+                if(isValid)
                 {
                     DAL dal = new DAL();
                     string trans_id = Guid.NewGuid().ToString();
                     string opp_id = ViewState["opp_id"].ToString();
                     string name = ViewState["name"].ToString();
                     string investor_id = User.Identity.GetUserId().ToString();
-                    double amount_left = Convert.ToDouble(ViewState["total_amt"]) - amount;
-                    dal.InvestInOpportunity(trans_id, opp_id, investor_id, amount);
+                    double amount_left = Convert.ToDouble(ViewState["total_amt"]) - amount_to_be_invested;
+                    dal.InvestInOpportunity(trans_id, opp_id, investor_id, amount_to_be_invested);
                     ShowopprtunityDetails(opp_id, name);
                 }
             }
+        }
+
+        public bool CheckValidTransaction()
+        {
+            double amount_to_be_invested = Convert.ToDouble(txt_investAmt.Text);
+            double minimum_investment_per_investor = Convert.ToDouble(ViewState["minimum_investment_per_investor"]);
+            double amount_left = Convert.ToDouble(ViewState["total_amt"]) - amount_to_be_invested;
+            if (amount_to_be_invested < minimum_investment_per_investor)
+            {
+                lbl_msg.ForeColor = System.Drawing.Color.Red;
+                lbl_msg.Text = "Enter an amount greater than the Minimum Amount";
+                return false;
+            }
+            if (amount_left < 0)
+            {
+                lbl_msg.ForeColor = System.Drawing.Color.Red;
+                lbl_msg.Text = "The amount to be invested is greater than the amount left for investment.";
+                return false;
+            }
+
+            return true;
         }
 
         protected void btn_return_Click(object sender, EventArgs e)

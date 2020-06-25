@@ -73,6 +73,10 @@ namespace Acreageway
             {
                 adminnavbar.Visible = true;
             }
+            if (Context.User?.Identity.IsAuthenticated == true)
+            {
+                userdashboard.Visible = true;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

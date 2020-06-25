@@ -1,59 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="KYC.aspx.cs" Inherits="Acreageway.KYC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="Scripts/jquery-3.3.1.js"></script>
-    <script src="Scripts/jquery-3.3.1.intellisense.js"></script>
-    <script src="Scripts/jquery-ui-1.12.1.js"></script>
-    <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
-    <script src="Scripts/jquery-ui.js"></script>
-    <link href="Scripts/jquery-ui.theme.css" rel="stylesheet" />
-    <link href="Scripts/jquery-ui.structure.css" rel="stylesheet" />
-    <link href="Scripts/jquery-ui.css" rel="stylesheet" />
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#<%=ddl_country.ClientID%>').on('change', function () {
-                var ddlvalue = $(this).val();
-                if (ddlvalue != 'Canada') {
-                    alert('Currently the services are available only for Canada investors');
-                }
-            });
-        });
 
-        $(function () {
-            $("#<%= txt_dob.ClientID %>").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                minDate: new Date(1900, 1, 1),
-                maxDate: new Date(),
-                yearRange: "c-50:c+0"
-            });
-        });
-
-        $(function () {
-            $("#<%= txt_dob.ClientID %>").change(function () {
-                var age = CalculateAge();
-                if (age < 18) {
-                    alert("Age must be Greater than equal to 18");
-                }
-            });
-        });
-
-        function CalculateAge() {
-            var dob = $("#<%= txt_dob.ClientID %>").val();
-            dob = new Date(dob);
-            var today = new Date();
-            var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
-            return age;
-        }
-
-        function AgeValidation(sender, args) {
-            var age = CalculateAge();
-            if (age >= 18) {
-                args.IsValid = true;
-            } else {
-                args.IsValid = false;
-            }
-        }
         $(function () {
             $("[id*=chkbx_address]").click(function () {
 
@@ -88,6 +37,19 @@
                 }
             });
         });
+
+        function SelectDate(e) {
+            var PresentDay = new Date();
+            var dateOfBirth = e.get_selectedDate();
+            var months = (PresentDay.getMonth() - dateOfBirth.getMonth() + (12 * (PresentDay.getFullYear() - dateOfBirth.getFullYear())));
+            var age = Math.round(months / 12);
+            
+            var txt_dob = document.getElementById('<%= txt_dob.ClientID %>');
+            if (age < 18) {
+                alert("You must be 18 Years of age");
+                txt_dob.value = "";
+            }
+        }
     </script>
     <style>
         form {
@@ -158,8 +120,9 @@
             <td class="col-sm-6">Date Of Birth
             </td>
             <td class="col-sm-6">
-                <asp:TextBox ID="txt_dob" runat="server"></asp:TextBox>
-                <asp:CustomValidator ID="CvAgeValidation" ErrorMessage="Age must be Greater than equal to 18" ForeColor="Red" ClientValidationFunction="AgeValidation" runat="server" />
+                <asp:TextBox ID="txt_dob" runat="server" CssClass="disable_future_dates"></asp:TextBox>
+                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txt_dob" Format="MM/dd/yyyy" OnClientDateSelectionChanged="SelectDate"/>
+                <asp:RequiredFieldValidator runat="server" ID="req_dob" ControlToValidate="txt_dob" ErrorMessage="* Required" ForeColor="Red" />
             </td>
         </tr>
 
@@ -279,13 +242,15 @@
             </td>
         </tr>
         <tr class="row">
-            <td colspan="3">
+            <td class="col-sm-4">
                 <asp:Button ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
             </td>
-            <td class="col-sm-6">
+            <td class="col-sm-4">
                 <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
             </td>
-
+            <td class="col-sm-4">
+                <asp:Button ID="btn_return" runat="server" Text="Happy Investments! Proceed Ahead" OnClick="btn_return_Click" Visible="false" Enabled="false"/>
+            </td>
         </tr>
     </table>
 </asp:Content>
