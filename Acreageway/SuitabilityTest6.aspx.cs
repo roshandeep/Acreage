@@ -97,7 +97,7 @@ namespace Acreageway
         protected void btn_submit_Click(object sender, EventArgs e)
         {
             CreateUser();
-            Response.Redirect("~/OpportunityList.aspx", false);
+            Response.Redirect("~/Default.aspx", false);
         }
 
         public void CreateUser()
@@ -130,7 +130,7 @@ namespace Acreageway
                 }
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                Response.Redirect("~/KYC.aspx", false);
+                Response.Redirect("~/Default.aspx", false);
             }
             else
             {

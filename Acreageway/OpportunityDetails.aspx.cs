@@ -90,18 +90,26 @@ namespace Acreageway
 
         protected void btn_Accept_Invest_Click(object sender, EventArgs e)
         {
+            DAL dal = new DAL();
+
             if (User?.Identity.IsAuthenticated == true)
             {
-                if (Request.QueryString["Id"] != null && Request.QueryString["Name"] != null)
+                bool complete = dal.checkKYCStatus(User.Identity.GetUserId().ToString());
+                if (complete)
                 {
-                    string opp_id = Request.QueryString["Id"].ToString();
-                    string name = Request.QueryString["Name"].ToString();
-                    DAL dal = new DAL();
-
-                    var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
-                    var role = roleManager.FindByNameAsync("Investor").Result;
-                    dal.AddToFavourites(User.Identity.GetUserId().ToString(), opp_id);
-                    Response.Redirect("InvestInOpportunity.aspx?Id=" + opp_id + "&Name=" + name, false);
+                    if (Request.QueryString["Id"] != null && Request.QueryString["Name"] != null)
+                    {
+                        string opp_id = Request.QueryString["Id"].ToString();
+                        string name = Request.QueryString["Name"].ToString();
+                        var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+                        var role = roleManager.FindByNameAsync("Investor").Result;
+                        dal.AddToFavourites(User.Identity.GetUserId().ToString(), opp_id);
+                        Response.Redirect("InvestInOpportunity.aspx?Id=" + opp_id + "&Name=" + name, false);
+                    }
+                }
+                else
+                {
+                    Response.Redirect("~/KYC.aspx", false);
                 }
             }
             else

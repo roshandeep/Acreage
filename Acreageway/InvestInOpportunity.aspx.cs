@@ -60,7 +60,8 @@ namespace Acreageway
 
         protected void btn_Invest_Click(object sender, EventArgs e)
         {
-            if(txt_investAmt.Text == "")
+            DAL dal = new DAL();
+            if (txt_investAmt.Text == "")
             {
                 lbl_msg.ForeColor = System.Drawing.Color.Red;
                 lbl_msg.Text = "Enter an Amount you want to Invest.";
@@ -70,9 +71,8 @@ namespace Acreageway
                 double amount_to_be_invested = Convert.ToDouble(txt_investAmt.Text);
                 double minimum_investment_per_investor = Convert.ToDouble(ViewState["minimum_investment_per_investor"]);
                 bool isValid = CheckValidTransaction();
-                if(isValid)
+                if (isValid)
                 {
-                    DAL dal = new DAL();
                     string trans_id = Guid.NewGuid().ToString();
                     string opp_id = ViewState["opp_id"].ToString();
                     string name = ViewState["name"].ToString();

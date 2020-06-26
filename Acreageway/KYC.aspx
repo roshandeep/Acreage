@@ -43,13 +43,22 @@
             var dateOfBirth = e.get_selectedDate();
             var months = (PresentDay.getMonth() - dateOfBirth.getMonth() + (12 * (PresentDay.getFullYear() - dateOfBirth.getFullYear())));
             var age = Math.round(months / 12);
-            
+
             var txt_dob = document.getElementById('<%= txt_dob.ClientID %>');
             if (age < 18) {
                 alert("You must be 18 Years of age");
                 txt_dob.value = "";
             }
         }
+
+        $(document).ready(function () {
+            $('#<%=ddl_country.ClientID%>').on('change', function () {
+                var ddlvalue = $(this).val();
+                if (ddlvalue != 'Canada') {
+                    alert('Currently the services are available only for Canadian investors');
+                }
+            });
+        });
     </script>
     <style>
         form {
@@ -121,7 +130,7 @@
             </td>
             <td class="col-sm-6">
                 <asp:TextBox ID="txt_dob" runat="server" CssClass="disable_future_dates"></asp:TextBox>
-                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txt_dob" Format="MM/dd/yyyy" OnClientDateSelectionChanged="SelectDate"/>
+                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txt_dob" Format="MM/dd/yyyy" OnClientDateSelectionChanged="SelectDate" />
                 <asp:RequiredFieldValidator runat="server" ID="req_dob" ControlToValidate="txt_dob" ErrorMessage="* Required" ForeColor="Red" />
             </td>
         </tr>
@@ -249,7 +258,7 @@
                 <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
             </td>
             <td class="col-sm-4">
-                <asp:Button ID="btn_return" runat="server" Text="Happy Investments! Proceed Ahead" OnClick="btn_return_Click" Visible="false" Enabled="false"/>
+                <asp:Button ID="btn_return" runat="server" Text="Happy Investments! Proceed Ahead" OnClick="btn_return_Click" Visible="false" Enabled="false" />
             </td>
         </tr>
     </table>

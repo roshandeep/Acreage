@@ -13,6 +13,21 @@ namespace Acreageway
 
         SqlCommand cmd;
 
+        public DataTable DefaultpageOpportunity()
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = @"SELECT TOP 5 opportunity_id, oppotunity_name, opportunity_imgName, image_data
+                            FROM opportunity o 
+                            WHERE is_active = '1' AND opportunity_status = 'Approved';";
+            cmd = new SqlCommand(sql, cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
         public DataTable LoadOpportunityList()
         {
             SqlConnection cnn = new SqlConnection(connetionString);
@@ -42,6 +57,23 @@ namespace Acreageway
             da.Fill(dt);
             cnn.Close();
             return dt;
+        }
+
+        public bool checkKYCStatus(string userid)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            int count = 0;
+            string sql = @"SELECT COUNT(kyc_id) FROM user_KYC WHERE userid = @userid";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userid", userid));
+            count = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+            if (count > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public DataTable getUploadedDocs(string investor_id)

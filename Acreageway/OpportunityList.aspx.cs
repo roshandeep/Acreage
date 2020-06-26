@@ -53,7 +53,17 @@ namespace Acreageway
 
         protected void btn_Add_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/CreateOpportunity.aspx", false);
+            DAL dal = new DAL();
+            bool complete = dal.checkKYCStatus(User.Identity.GetUserId().ToString());
+            if (complete)
+            {
+                Response.Redirect("~/CreateOpportunity.aspx", false);
+            }
+            else
+            {
+                Response.Redirect("~/KYC.aspx", false);
+            }
+            
         }
     }
 }

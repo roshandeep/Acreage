@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align: center;">
-        <asp:Repeater ID="rpt_UserfavOpportunity" runat="server">
+        <asp:DataList ID="rpt_UserfavOpportunity" runat="server">
             <HeaderTemplate>
                 <table border="1" style="margin: auto auto; padding: 10px;">
                     <tr>
@@ -81,7 +81,7 @@
             <FooterTemplate>
                 </table>
             </FooterTemplate>
-        </asp:Repeater>
+        </asp:DataList>
     </div>
     <div>
         <asp:Button ID="btn_return" runat="server" Text="Return" OnClick="btn_return_Click"/>

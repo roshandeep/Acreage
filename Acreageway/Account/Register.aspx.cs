@@ -33,7 +33,7 @@ namespace Acreageway.Account
             if(UserType.SelectedValue.Equals("2"))//1 is Investor, 2 is Issuer
             {
                 CreateIssuer();
-                Response.Redirect("~/KYC.aspx", true);
+                Response.Redirect("~/Default.aspx", true);
             }
 
         }

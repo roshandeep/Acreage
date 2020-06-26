@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Acreageway.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Acreageway
 {
@@ -63,8 +65,14 @@ namespace Acreageway
         {
             Models.KYC kyc_obj = new Models.KYC();
 
-            kyc_obj.userid = Session["Id"].ToString();
-            kyc_obj.user_type = Session["Role"].ToString();
+            kyc_obj.userid = User.Identity.GetUserId().ToString();
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var rolesList = manager.GetRoles(User.Identity.GetUserId());
+            string user_type = "";
+            foreach(string role in rolesList){
+                user_type = user_type + role + " , ";
+            }
+            kyc_obj.user_type = user_type;
             kyc_obj.salutation = ddl_salutation.SelectedItem.Text;
             kyc_obj.full_name = txt_Fname.Text.Trim() + " " + txt_Lname.Text.Trim();
             kyc_obj.email_address = txt_email.Text.Trim();
