@@ -133,6 +133,7 @@ namespace Acreageway
             if (Page.IsValid && valid)
             {
                 btn_Next.Enabled = true;
+                btn_Save.Enabled = false;
                 SaveAnswers();
             }
             else

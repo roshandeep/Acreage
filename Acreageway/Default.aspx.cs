@@ -15,7 +15,7 @@ namespace Acreageway
         {
             if (Request.UrlReferrer != null)
             {
-                if (Request.UrlReferrer.AbsoluteUri.Contains("KYC"))
+                if (Request.UrlReferrer.AbsoluteUri.Contains("Register") || Request.UrlReferrer.AbsoluteUri.Contains("SuitabilityTest6"))
                 {
                     ModalPopupExtender2.Show();
                 }

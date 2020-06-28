@@ -14,10 +14,10 @@ namespace Acreageway
         {
             if (Page.IsValid)
             {
-                 bool valid = SaveAnswers();
+                bool valid = SaveAnswers();
                 if (valid)
                 {
-                    Response.Redirect("~/Default.aspx", false);
+                    Response.Redirect("~/SuitabilityTest1.aspx", false);
                 }
                 else
                 {
@@ -51,23 +51,23 @@ namespace Acreageway
                 (fin_asset == "Over $1,000,000") || 
                 (net_asset == "$1,000,000 to $5,000,000" || net_asset == "Over $5,000,000"))
             {
-                Session["investor_Type"] = "Accredited";
+                Session["Accredited"] = true;
             }
             else
             {
-                Session["investor_Type"] = "Retail";
+                Session["Accredited"] = false;
             }
             return true;
         }
 
         protected void chk_NoLimit_CheckedChanged(object sender, EventArgs e)
         {
-            Session["investor_Type"] = "Accredited";
             ModalPopupExtender1.Show();
         }
 
         protected void btn_proceed_Click(object sender, EventArgs e)
         {
+            Session["Accredited"] = true;
             Response.Redirect("~/SuitabilityTest1.aspx", false);
         }
 

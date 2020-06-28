@@ -467,41 +467,17 @@
     <Compile Include="ManageRoles.aspx.designer.cs">
       <DependentUpon>ManageRoles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006180859508_InitialCreate.cs" />
-    <Compile Include="Migrations\202006180859508_InitialCreate.Designer.cs">
-      <DependentUpon>202006180859508_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202006280239003_Initial.cs" />
+    <Compile Include="Migrations\202006280239003_Initial.Designer.cs">
+      <DependentUpon>202006280239003_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006180914213_FirstName.cs" />
-    <Compile Include="Migrations\202006180914213_FirstName.Designer.cs">
-      <DependentUpon>202006180914213_FirstName.cs</DependentUpon>
+    <Compile Include="Migrations\202006280243404_Accredited.cs" />
+    <Compile Include="Migrations\202006280243404_Accredited.Designer.cs">
+      <DependentUpon>202006280243404_Accredited.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006180917203_Users.cs" />
-    <Compile Include="Migrations\202006180917203_Users.Designer.cs">
-      <DependentUpon>202006180917203_Users.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006180918400_FirstName1.cs" />
-    <Compile Include="Migrations\202006180918400_FirstName1.Designer.cs">
-      <DependentUpon>202006180918400_FirstName1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006180924509_Commented.cs" />
-    <Compile Include="Migrations\202006180924509_Commented.Designer.cs">
-      <DependentUpon>202006180924509_Commented.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006180927172_NullableFlags.cs" />
-    <Compile Include="Migrations\202006180927172_NullableFlags.Designer.cs">
-      <DependentUpon>202006180927172_NullableFlags.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006180928533_CommentedAgain.cs" />
-    <Compile Include="Migrations\202006180928533_CommentedAgain.Designer.cs">
-      <DependentUpon>202006180928533_CommentedAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006180929502_NullableFlags2.cs" />
-    <Compile Include="Migrations\202006180929502_NullableFlags2.Designer.cs">
-      <DependentUpon>202006180929502_NullableFlags2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006182227382_Actually Nullable.cs" />
-    <Compile Include="Migrations\202006182227382_Actually Nullable.Designer.cs">
-      <DependentUpon>202006182227382_Actually Nullable.cs</DependentUpon>
+    <Compile Include="Migrations\202006280246155_Accredited2.cs" />
+    <Compile Include="Migrations\202006280246155_Accredited2.Designer.cs">
+      <DependentUpon>202006280246155_Accredited2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -639,32 +615,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006180859508_InitialCreate.resx">
-      <DependentUpon>202006180859508_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006280239003_Initial.resx">
+      <DependentUpon>202006280239003_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180914213_FirstName.resx">
-      <DependentUpon>202006180914213_FirstName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006280243404_Accredited.resx">
+      <DependentUpon>202006280243404_Accredited.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180917203_Users.resx">
-      <DependentUpon>202006180917203_Users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180918400_FirstName1.resx">
-      <DependentUpon>202006180918400_FirstName1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180924509_Commented.resx">
-      <DependentUpon>202006180924509_Commented.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180927172_NullableFlags.resx">
-      <DependentUpon>202006180927172_NullableFlags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180928533_CommentedAgain.resx">
-      <DependentUpon>202006180928533_CommentedAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006180929502_NullableFlags2.resx">
-      <DependentUpon>202006180929502_NullableFlags2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006182227382_Actually Nullable.resx">
-      <DependentUpon>202006182227382_Actually Nullable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006280246155_Accredited2.resx">
+      <DependentUpon>202006280246155_Accredited2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

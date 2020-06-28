@@ -21,6 +21,7 @@ namespace Acreageway.Models
         public string PostalCode { get; set; }
         public bool? KYC_Flag { get; set; }
         public int? SuitablityTestFlag { get; set; }
+        public bool? Accredited { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {

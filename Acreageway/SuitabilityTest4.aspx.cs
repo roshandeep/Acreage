@@ -105,10 +105,11 @@ namespace Acreageway
 
         protected void btn_Save_Click(object sender, EventArgs e)
         {
-            btn_Next.Enabled = true;
             bool valid = ValidateData();
             if (valid && Page.IsValid)
             {
+                btn_Next.Enabled = true;
+                btn_Save.Enabled = false;
                 SaveAnswers();
                 lbl_msg.ForeColor = System.Drawing.Color.Green;
                 lbl_msg.Text = "Information saved";

@@ -40,7 +40,7 @@
                     <asp:ListItem>$300,000 to $1,000,000</asp:ListItem>
                     <asp:ListItem>Over $1,000,000</asp:ListItem>
                 </asp:RadioButtonList>
-                <asp:RequiredFieldValidator runat="server" ID="req_ans3" ControlToValidate="rdb_ans2" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
+                <asp:RequiredFieldValidator runat="server" ID="req_ans3" ControlToValidate="rdb_ans3" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
             </td>
         </tr>
         <tr class="row">

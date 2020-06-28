@@ -27,7 +27,7 @@ namespace Acreageway.Account
 
             if(UserType.SelectedValue.Equals("1"))//1 is Investor, 2 is Issuer
             {
-                Response.Redirect("~/SuitabilityTest1", true);
+                Response.Redirect("~/PreSuitabilityTest", true);
             }
             else
             if(UserType.SelectedValue.Equals("2"))//1 is Investor, 2 is Issuer

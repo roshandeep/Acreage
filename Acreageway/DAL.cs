@@ -80,8 +80,16 @@ namespace Acreageway
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = @"SELECT investor_id, uploaded_fileName, file_extension, file_contentType, file_data, filecategory 
-                            FROM suitability_test_uploadedDoc WHERE investor_id = @investor_id ORDER BY added_timestamp DESC";
+            string sql = @"WITH cte AS
+                            (
+                               SELECT *,
+                                     ROW_NUMBER() OVER (PARTITION BY filecategory ORDER BY added_timestamp DESC) AS rn
+                               FROM suitability_test_uploadedDoc
+                               WHERE investor_id = @investor_id
+                            )
+                            SELECT *
+                            FROM cte
+                            WHERE rn = 1";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -214,8 +222,16 @@ namespace Acreageway
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
             int count = 0;
-            string sql = @"SELECT COUNT(filecategory) FROM suitability_test_uploadedDoc 
-                            WHERE filecategory IN ('Broker Statement', 'Financial Assets', 'T4', 'NOA', 'BankSavings') AND investor_id = @investor_id;";
+            string sql = @"WITH cte AS
+                            (
+                               SELECT *,
+                                     ROW_NUMBER() OVER (PARTITION BY filecategory ORDER BY added_timestamp DESC) AS rn
+                               FROM suitability_test_uploadedDoc
+                               WHERE investor_id = @investor_id
+                            )
+                            SELECT COUNT(*)
+                            FROM cte
+                            WHERE rn = 1";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@investor_id", investor_id));
             count = Convert.ToInt32(cmd.ExecuteScalar());

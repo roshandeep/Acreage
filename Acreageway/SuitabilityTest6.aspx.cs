@@ -22,6 +22,7 @@ namespace Acreageway
             if (Page.IsValid)
             {
                 btn_Next.Enabled = true;
+                btn_Save.Enabled = false;
                 SaveAnswers();
             }
         }
@@ -115,8 +116,9 @@ namespace Acreageway
                 City = Session["City"].ToString(),
                 Province = Session["Province"].ToString(),
                 PhoneNumber = Session["PhoneNumber"].ToString(),
-                PostalCode = Session["PostalCode"].ToString()
-            };
+                PostalCode = Session["PostalCode"].ToString(),
+                Accredited = Convert.ToBoolean(Session["Accredited"].ToString())
+        };
             IdentityResult result = manager.Create(user, Session["Password"].ToString());
             if (result.Succeeded)
             {

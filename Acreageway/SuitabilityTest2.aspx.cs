@@ -15,8 +15,12 @@ namespace Acreageway
 
         protected void btn_Save_Click(object sender, EventArgs e)
         {
-            btn_Next.Enabled = true;
-            SaveAnswers();
+            if (Page.IsValid)
+            {
+                btn_Next.Enabled = true;
+                btn_Save.Enabled = false;
+                SaveAnswers();
+            }
         }
 
         private void SaveAnswers()
