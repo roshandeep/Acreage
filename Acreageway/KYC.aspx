@@ -83,10 +83,16 @@
                     <asp:ListItem Text="Ms." Value="Ms."></asp:ListItem>
                     <asp:ListItem Text="Dr." Value="Dr."></asp:ListItem>
                 </asp:DropDownList>
+                
                 <asp:RequiredFieldValidator runat="server" ID="req_salutation" ControlToValidate="ddl_salutation" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-
+            </td>
+            <td class="col-sm-6"></td>
+             <td class="col-sm-6">
                 <asp:TextBox ID="txt_Fname" runat="server" placeholder="Firstname"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_Fname" ControlToValidate="txt_Fname" ErrorMessage="* Required" ForeColor="Red" />
+            </td>
+            <td class="col-sm-6"></td>
+             <td class="col-sm-6">
                 <asp:TextBox ID="txt_Lname" runat="server" placeholder="Lastname"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_Lname" ControlToValidate="txt_Lname" ErrorMessage="* Required" ForeColor="Red" />
             </td>
@@ -118,7 +124,7 @@
             <td class="col-sm-6">Email
             </td>
             <td class="col-sm-6">
-                <asp:TextBox ID="txt_email" runat="server" Style="width: 25rem"></asp:TextBox>
+                <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_email" ControlToValidate="txt_email" ErrorMessage="* Required" ForeColor="Red" />
                 <asp:RegularExpressionValidator ID="reg_email" runat="server" ErrorMessage="* Invalid Email Address" ControlToValidate="txt_email" ForeColor="Red" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></asp:RegularExpressionValidator>
             </td>
@@ -149,7 +155,7 @@
                 <asp:CheckBox ID="chkbx_address" runat="server" Text="Mailing Address same as Residential Address" Checked="true" ClientIDMode="Static" />
             </td>
             <td class="col-sm-6">
-                <asp:TextBox ID="txt_address" runat="server" placeholder="House No. / Street Name" Style="width: 25rem"></asp:TextBox>
+                <asp:TextBox ID="txt_address" runat="server" placeholder="House No. / Street Name"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_address" ControlToValidate="txt_address" ErrorMessage="* Required" ForeColor="Red" />
             </td>
         </tr>
@@ -208,7 +214,7 @@
             <td class="col-sm-6">Residential Address
             </td>
             <td class="col-sm-6">
-                <asp:TextBox ID="txt_residentialaddress" runat="server" placeholder="House No. / Street Name" Style="width: 25rem"></asp:TextBox>
+                <asp:TextBox ID="txt_residentialaddress" runat="server" placeholder="House No. / Street Name"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="req_resAddress" ControlToValidate="txt_residentialaddress" ErrorMessage="* Required" ForeColor="Red" ClientIDMode="Static" Enabled="false" />
             </td>
             <td class="col-sm-6">Residential Province

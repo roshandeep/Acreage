@@ -10,7 +10,7 @@
             </td>
             <td class="col-sm-6">
                 <asp:TextBox ID="txt_ans1" runat="server"></asp:TextBox>
-                <asp:CheckBox ID="chk_NoLimit" runat="server" Text="No Limit" OnCheckedChanged="chk_NoLimit_CheckedChanged" />
+                <asp:CheckBox ID="chk_NoLimit" runat="server" Text="No Limit" OnCheckedChanged="chk_NoLimit_CheckedChanged" AutoPostBack="true"/>
                 <asp:RequiredFieldValidator runat="server" ID="req_ans1" ControlToValidate="txt_ans1" ErrorMessage="* Required" ForeColor="Red" Display="Dynamic" />
                 <asp:RegularExpressionValidator runat="server" ID="validate" ControlToValidate="txt_ans1" ValidationExpression="^[0-9]{0,10}$" ErrorMessage="Enter numbers only" ForeColor="red"></asp:RegularExpressionValidator>
             </td>
@@ -100,7 +100,7 @@
             </td>
         </tr>
     </table>
-    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="chk_NoLimit" PopupControlID="Panel1" CancelControlID="lnkDummyCancel"></ajaxToolkit:ModalPopupExtender>
+<%--    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="chk_NoLimit" PopupControlID="Panel1" CancelControlID="lnkDummyCancel"></ajaxToolkit:ModalPopupExtender>
     <asp:Panel ID="Panel1" runat="server" align="center" Style="display: none">
         <div style="height: 60px; background-color: aliceblue;">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -113,7 +113,7 @@
         </div>
         <asp:LinkButton ID="lnkDummyCancel" runat="server"></asp:LinkButton>
         <asp:Button ID="btn_proceed" runat="server" Text="Proceed" OnClick="btn_proceed_Click" CausesValidation="false" />
-    </asp:Panel>
+    </asp:Panel>--%>
 
     <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" TargetControlID="lnkDummy" PopupControlID="Panel2" CancelControlID="btn_cancel"></ajaxToolkit:ModalPopupExtender>
     <asp:Panel ID="Panel2" runat="server" align="center" Style="display: none">

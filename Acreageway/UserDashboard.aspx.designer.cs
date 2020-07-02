@@ -13,6 +13,15 @@ namespace Acreageway {
     public partial class UserDashboard {
         
         /// <summary>
+        /// div_investments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_investments;
+        
+        /// <summary>
         /// btn_Investments control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Acreageway {
         protected global::System.Web.UI.WebControls.Button btn_kyc;
         
         /// <summary>
+        /// div_fav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_fav;
+        
+        /// <summary>
         /// btn_fav control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Acreageway {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_fav;
+        
+        /// <summary>
+        /// div_opportunities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_opportunities;
         
         /// <summary>
         /// btn_opportunities control.

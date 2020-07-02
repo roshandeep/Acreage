@@ -26,10 +26,13 @@ namespace Acreageway
             {
                 btn_Investments.Visible = true;
                 btn_fav.Visible = true;
+                div_investments.Visible = true;
+                div_fav.Visible = true;
             }
             if(rolesList.Contains("Issuer"))
             {
                 btn_opportunities.Visible = true;
+                div_opportunities.Visible = true;
             }
         }
 

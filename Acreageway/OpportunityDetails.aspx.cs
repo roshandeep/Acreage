@@ -103,7 +103,6 @@ namespace Acreageway
                         string name = Request.QueryString["Name"].ToString();
                         var roleManager = Context.GetOwinContext().GetUserManager<ApplicationRoleManager>();
                         var role = roleManager.FindByNameAsync("Investor").Result;
-                        dal.AddToFavourites(User.Identity.GetUserId().ToString(), opp_id);
                         Response.Redirect("InvestInOpportunity.aspx?Id=" + opp_id + "&Name=" + name, false);
                     }
                 }
